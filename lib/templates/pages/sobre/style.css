@@ -49,7 +49,10 @@ header {
 }
 
 header img {
-  width: 140px;
+  height: 50px;
+  max-width: 140px;
+  width: auto;
+  object-fit: contain;
 }
 
 header a {
@@ -63,7 +66,7 @@ header nav {
   display: flex;
 }
 
-header :first-child {
+header nav :first-child {
   margin-right: 15px;
 }
 
@@ -123,7 +126,7 @@ main > img {
   }
 
   header img {
-    width: 230px;
+    max-width: 230px;
   }
 
   header a {
