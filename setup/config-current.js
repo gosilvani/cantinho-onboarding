@@ -24,9 +24,9 @@ const company = {
 };
 
 const user = {
-  name: 'teste',
-  email: 'teste@mail.com',
-  password: '511150',
+  name: 'Silvani Gonçalves',
+  email: 'silvanibjj@gmail.com',
+  password: '03102015',
   type: 'companyAdmin',
 };
 
@@ -36,7 +36,7 @@ const theme = {
   contents: {
     home: {
       heroImageFileName: 'hero-image.svg',
-      heroText: 'Estamos aqui para ajudar você a encontrar o seu canto ideal.',
+      heroText: 'Estamos aqui para ajudar você a encontrar o seu cantinho ideal.',
       metaDescription: 'No Cantinho você encontra casas e apartamentos para alugar ou comprar nas principais cidades. Acesse agora e veja as ofertas.'
     },
     about: {
