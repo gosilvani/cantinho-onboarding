@@ -1,32 +1,33 @@
 const company = {
-  name: 'cantinho teste',
-  tenant: 'cantinho-teste',
-  dns: 'www.cantinho.co',
+  name: 'preta corretora',
+  tenant: 'preta-corretora-teste',
+  dns: 'www.pretacorretora.cantinho.co',
   GTM: 'GTM-N4N2WW7K',
   address: {
-    street: 'Rua Caiana',
-    number: '491',
-    district: 'área de lazer',
+    street: 'Av. Roque Ferreira de Castro',
+    number: '165',
+    complement: 'Sala 01',
+    district: 'Centro',
     city: 'Espera Feliz',
     state: 'MG',
   },
   contact: {
-    email: 'silvani@gmail.com',
-    phone: '32984835145',
-    whatsapp: '32984835145'
+    email: 'pretacorretora@gmail.com',
+    phone: '32984083980',
+    whatsapp: '32984083980'
   },
   citiesAndDistricts: [
     {
-      name: 'espera feliz - mg',
+      name: 'Espera Feliz - MG',
       districts: ['Centro', 'João Clara']
     }
   ],
 };
 
 const user = {
-  name: 'Silvani Gonçalves',
-  email: 'silvanibjj@gmail.com',
-  password: '03102015',
+  name: 'Preta',
+  email: 'teste-preta@gmail.com',
+  password: '10203040',
   type: 'companyAdmin',
 };
 
@@ -36,32 +37,32 @@ const theme = {
   contents: {
     home: {
       heroImageFileName: 'hero-image.svg',
-      heroText: 'Estamos aqui para ajudar você a encontrar o seu cantinho ideal.',
-      metaDescription: 'No Cantinho você encontra casas e apartamentos para alugar ou comprar nas principais cidades. Acesse agora e veja as ofertas.'
+      heroText: 'Os melhores imóveis com a confiança da Preta.',
+      metaDescription: 'teste-home'
     },
     about: {
       heroImageFileName: 'hero-image.svg',
-      heroText: 'Nossa missão é potencializar a relação entre locadores e locatários / compradores e vendedores, oferecendo soluções tecnológicas que simplificam e agilizam o processo de locação e venda de imóveis, garantindo uma experiência mais eficiente e transparente para todos os envolvidos.',
-      metaDescription: 'No Cantinho.co, conectamos pessoas ao imóvel ideal. Descubra quem somos e como ajudamos você a encontrar seu próximo lar com facilidade.'
+      heroText: 'Nossa missão é cuidar do seu patrimônio com profissionalismo e transparência, atuando há mais de 10 anos no mercado com compra, venda e locação de imóveis residenciais, sítios e outras propriedades, e oferecendo soluções que tornam cada etapa mais simples, ágil e segura para proprietários e clientes.',
+      metaDescription: 'teste-about'
     },
     propertySale: {
-      metaDescription: 'Encontre casas e apartamentos para comprar em {{city}}. Encontre o imóvel ideal com fotos, localização e valor do imóvel.'
+      metaDescription: 'teste-property-sale-{city}'
     },
     propertyRent: {
-      metaDescription: 'Encontre casas e apartamentos para alugar em {{city}}. Encontre o imóvel ideal com fotos, localização e valor do aluguel.'
+      metaDescription: 'teste-property-rent-{city}'
     }
   },
   colors: {
-    line: '#D0A616',
-    background: '#f4f4f4',
+    line: '#F58634',
+    background: '#F7E257',
     buttons: {
       transparent: {
-        text: '#D0A616',
-        border: '#D0A616'
+        text: '#F58634',
+        border: '#F58634'
       },
       solid: {
-        background: '#D0A616',
-        text: '#2C345C'
+        background: '#F58634',
+        text: '#201E1E'
       },
       remove: {
         background: '#B21313',
@@ -69,20 +70,20 @@ const theme = {
       }
     },
     text: {
-      title: '#2C345C',
-      default: '#2C345C',
-      highlight: '#D0A616'
+      title: '#201E1E',
+      default: '#201E1E',
+      highlight: '#F58634'
     },
     forms: {
-      label: '#2C345C',
+      label: '#201E1E',
       input: {
-        background: '#D5DADE',
-        text: '#2C345C'
+        background: '#E6E6E6',
+        text: '#201E1E'
       }
     },
     ads: {
-      background: '#fff',
-      border: '#ddd'
+      background: '#E6E6E6',
+      border: '#dddddd'
     }
   }
 }
