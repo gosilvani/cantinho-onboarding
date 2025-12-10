@@ -85,7 +85,7 @@
         },
         "whatsapp": {
           "type": "string",
-          "minLength": 11
+          "minLength": 10
         }
       }
     },

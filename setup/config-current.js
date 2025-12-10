@@ -1,89 +1,89 @@
 const company = {
-  name: 'preta corretora',
-  tenant: 'preta-corretora-teste',
-  dns: 'www.pretacorretora.cantinho.co',
-  GTM: 'GTM-N4N2WW7K',
+  name: '',
+  tenant: '',
+  dns: '',
+  GTM: '',
   address: {
-    street: 'Av. Roque Ferreira de Castro',
-    number: '165',
-    complement: 'Sala 01',
-    district: 'Centro',
-    city: 'Espera Feliz',
-    state: 'MG',
+    street: '',
+    number: '',
+    complement: '',
+    district: '',
+    city: '',
+    state: '',
   },
   contact: {
-    email: 'pretacorretora@gmail.com',
-    phone: '32984083980',
-    whatsapp: '32984083980'
+    email: '',
+    phone: '',
+    whatsapp: ''
   },
   citiesAndDistricts: [
     {
-      name: 'Espera Feliz - MG',
-      districts: ['Centro', 'João Clara']
+      name: '',
+      districts: []
     }
   ],
 };
 
 const user = {
-  name: 'Preta',
-  email: 'teste-preta@gmail.com',
-  password: '10203040',
+  name: '',
+  email: '',
+  password: '',
   type: 'companyAdmin',
 };
 
 const theme = {
-  logoFileName: 'logo.svg',
-  faviconFileName: 'favicon.ico',
+  logoFileName: '',
+  faviconFileName: '',
   contents: {
     home: {
-      heroImageFileName: 'hero-image.svg',
-      heroText: 'Os melhores imóveis com a confiança da Preta.',
-      metaDescription: 'teste-home'
+      heroImageFileName: '',
+      heroText: '',
+      metaDescription: ''
     },
     about: {
-      heroImageFileName: 'hero-image.svg',
-      heroText: 'Nossa missão é cuidar do seu patrimônio com profissionalismo e transparência, atuando há mais de 10 anos no mercado com compra, venda e locação de imóveis residenciais, sítios e outras propriedades, e oferecendo soluções que tornam cada etapa mais simples, ágil e segura para proprietários e clientes.',
-      metaDescription: 'teste-about'
+      heroImageFileName: '',
+      heroText: '',
+      metaDescription: ''
     },
     propertySale: {
-      metaDescription: 'teste-property-sale-{city}'
+      metaDescription: ''
     },
     propertyRent: {
-      metaDescription: 'teste-property-rent-{city}'
+      metaDescription: ''
     }
   },
   colors: {
-    line: '#F58634',
-    background: '#F7E257',
+    line: '',
+    background: '',
     buttons: {
       transparent: {
-        text: '#F58634',
-        border: '#F58634'
+        text: '',
+        border: ''
       },
       solid: {
-        background: '#F58634',
-        text: '#201E1E'
+        background: '',
+        text: ''
       },
       remove: {
-        background: '#B21313',
-        text: '#F2F2F2'
+        background: '',
+        text: ''
       }
     },
     text: {
-      title: '#201E1E',
-      default: '#201E1E',
-      highlight: '#F58634'
+      title: '',
+      default: '',
+      highlight: ''
     },
     forms: {
-      label: '#201E1E',
+      label: '',
       input: {
-        background: '#E6E6E6',
-        text: '#201E1E'
+        background: '',
+        text: ''
       }
     },
     ads: {
-      background: '#E6E6E6',
-      border: '#dddddd'
+      background: '',
+      border: ''
     }
   }
 }
