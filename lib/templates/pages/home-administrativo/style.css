@@ -116,7 +116,7 @@ main section a {
   height: 80px;
   gap: 30px;
 
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
 }
@@ -147,14 +147,12 @@ main section a svg {
     gap: 30px;
   }
 
-
   main section a {
     padding: 40px;
     height: 100px;
     gap: 15px;
 
     flex-direction: row;
-    display: flex;
     align-items: center;
     justify-content: center;
   }
