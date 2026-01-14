@@ -6,6 +6,7 @@
     "tenant",
     "dns",
     "GTM",
+    "siteMode",
     "address",
     "contact",
     "citiesAndDistricts"
@@ -28,6 +29,14 @@
       "type": "string",
       "minLength": 9,
       "maxLength": 20
+    },
+    "siteMode": {
+      "type": "string",
+      "enum": [
+        "both",
+        "buy",
+        "rent"
+      ]
     },
     "address": {
       "type": "object",
