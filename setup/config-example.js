@@ -3,6 +3,7 @@ const company = {
   tenant: '',
   dns: '',
   GTM: '',
+  siteMode: '',
   address: {
     street: '',
     number: '',

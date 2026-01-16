@@ -1,89 +1,90 @@
 const company = {
-  name: '',
-  tenant: '',
-  dns: '',
-  GTM: '',
+  name: 'teste1',
+  tenant: 'teste1',
+  dns: 'www.teste.cantinho.co',
+  GTM: 'GTM-XXXXXXX',
+  siteMode: 'rent',
   address: {
-    street: '',
-    number: '',
-    complement: '',
-    district: '',
-    city: '',
-    state: '',
+    street: 'Rua B',
+    number: '10',
+    complement: 'Apto 101',
+    district: 'Centro',
+    city: 'Espera Feliz',
+    state: 'MG',
   },
   contact: {
-    email: '',
-    phone: '',
-    whatsapp: ''
+    email: 'teste@gmail.com',
+    phone: '32984835145',
+    whatsapp: '32984835145'
   },
   citiesAndDistricts: [
     {
-      name: '',
-      districts: []
+      name: 'Espera Feliz - MG',
+      districts: ['centro']
     }
   ],
 };
 
 const user = {
-  name: '',
-  email: '',
-  password: '',
+  name: 'teste',
+  email: 'teste@gmail.com',
+  password: '10203050',
   type: 'companyAdmin',
 };
 
 const theme = {
-  logoFileName: '',
-  faviconFileName: '',
+  logoFileName: 'logo.svg',
+  faviconFileName: 'favicon.ico',
   contents: {
     home: {
-      heroImageFileName: '',
-      heroText: '',
-      metaDescription: ''
+      heroImageFileName: 'hero-image.svg',
+      heroText: 'Teste',
+      metaDescription: 'Teste'
     },
     about: {
-      heroImageFileName: '',
-      heroText: '',
-      metaDescription: ''
+      heroImageFileName: 'hero-image.svg',
+      heroText: 'Teste',
+      metaDescription: 'Teste'
     },
     propertySale: {
-      metaDescription: ''
+      metaDescription: 'Teste'
     },
     propertyRent: {
-      metaDescription: ''
+      metaDescription: 'Teste'
     }
   },
   colors: {
-    line: '',
-    background: '',
+    line: '#000',
+    background: '#f2f2f2',
     buttons: {
       transparent: {
-        text: '',
-        border: ''
+        text: '#000',
+        border: '#000'
       },
       solid: {
-        background: '',
-        text: ''
+        background: '#000',
+        text: '#fff'
       },
       remove: {
-        background: '',
-        text: ''
+        background: '#ff0000',
+        text: '#fff'
       }
     },
     text: {
-      title: '',
-      default: '',
-      highlight: ''
+      title: '#000',
+      default: '#000',
+      highlight: '#000'
     },
     forms: {
-      label: '',
+      label: '#000',
       input: {
-        background: '',
-        text: ''
+        background: '#000',
+        text: '#fff'
       }
     },
     ads: {
-      background: '',
-      border: ''
+      background: '#000',
+      border: '#000'
     }
   }
 }
