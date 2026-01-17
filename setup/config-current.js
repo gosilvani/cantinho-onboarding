@@ -1,7 +1,7 @@
 const company = {
-  name: 'teste1',
-  tenant: 'teste1',
-  dns: 'www.teste.cantinho.co',
+  name: 'teste2',
+  tenant: 'teste2',
+  dns: 'www.teste2.cantinho.co',
   GTM: 'GTM-XXXXXXX',
   siteMode: 'rent',
   address: {
