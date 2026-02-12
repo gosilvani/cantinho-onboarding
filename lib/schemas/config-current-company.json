@@ -34,7 +34,7 @@
       "type": "string",
       "enum": [
         "both",
-        "buy",
+        "sale",
         "rent"
       ]
     },

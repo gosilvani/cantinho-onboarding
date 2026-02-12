@@ -1,6 +1,6 @@
 const company = {
   name: 'teste2',
-  tenant: 'teste2',
+  tenant: 'cantinho-teste4',
   dns: 'www.teste2.cantinho.co',
   GTM: 'GTM-XXXXXXX',
   siteMode: 'rent',

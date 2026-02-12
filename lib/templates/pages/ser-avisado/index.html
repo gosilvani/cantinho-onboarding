@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{name}} | Receba alertas de novos imóveis</title>
+  <meta name="description"
+    content="Cadastre-se e receba alertas de novos imóveis direto no seu WhatsApp.">
+  <link rel="icon" type="image/x-icon" href="/assets/icons/{{faviconFileName}}">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <script>
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', '{{GTM}}');
+  </script>
+  <script src="main.js"></script>
+</head>
+
+<body>
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id={{GTM}}" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <header>
+    <a href="/index.html">
+      <img src="/assets/images/{{logoFileName}}" alt="logo" />
+    </a>
+    <nav>
+      <a href="https://wa.me/55{{whatsapp}}" class="contact" target="_blank" rel="noopener noreferrer">Contato</a>
+      <a href="/sobre/index.html">Sobre</a>
+    </nav>
+  </header>
+  <main>
+    <h1>Informe o que você procura</h1>
+    <p>Siga os passos a seguir e avisaremos quando surgir um imóvel compatível.</p>
+    <span>Passo <span class="number_step" id="current_step">1</span> de <span class="number_step">3</span></span>
+    <form id="form_step_one">
+      <fieldset id="camp_intent">
+        <label for="intent">
+          {{iconDetail}}
+          <span>Você quer alugar ou comprar?</span>
+        </label>
+        <select name="intent" id="intent">
+          <option value="" disabled selected hidden>Selecione</option>
+          <option value="rent">Alugar</option>
+          <option value="sale">Comprar</option>
+        </select>
+      </fieldset>
+      <fieldset>
+        <label for="type_property">
+          {{iconHome}}
+          <span>Imóvel</span>
+        </label>
+        <select name="type_property" id="type_property">
+          <option value="" disabled selected hidden>Selecione</option>
+          <option value="Apartamento">Apartamento</option>
+          <option value="Casa">Casa</option>
+          <option value="Kitnet">Kitnet</option>
+        </select>
+      </fieldset>
+      <fieldset>
+        <label for="city">
+          {{iconMap}}
+          <span>Cidade</span>
+        </label>
+        <select name="city" id="city" onchange="handleCityChange()" onfocus="buildCities()">
+          <option value="" disabled selected hidden>Selecione</option>
+        </select>
+      </fieldset>
+      <fieldset class="multi-select">
+        <label id="label_districts">
+          <div>
+            {{iconSearch}}
+            <span>Bairro</span>
+          </div>
+          <div>
+            <div>
+              <input type="radio" id="district_mode" name="district_mode" value="select" checked>
+              <label for="select">Quero</label>
+            </div>
+            <div>
+              <input type="radio" id="district_mode" name="district_mode" value="excluded">
+              <label for="excluded">Evitar</label>
+            </div>
+          </div>
+        </label>
+        <div class="custom-select" name="districts" id="districts">
+          <button type="button" class="select-trigger" id="districts_select" onclick="onDistrict()">Selecione</button>
+          <div class="options" id="options_districts">
+          </div>
+        </div>
+      </fieldset>
+      <div id="gambs"></div>
+      <button type="button" class="btn_action" onclick="processStep(true)">Continuar</button>
+    </form>
+    <form id="form_step_two">
+      <fieldset>
+        <label for="price_range">
+          {{iconDollar}}
+          <span>Aluguel</span>
+        </label>
+        <select name="price_range" id="price_range">
+          <option value="" disabled selected hidden>Selecione</option>
+          <option value="800">Até R$ 800,00</option>
+          <option value="1200">Até R$ 1200,00</option>
+          <option value="1600">Até R$ 1600,00</option>
+          <option value="2500">Até R$ 2500,00</option>
+          <option value="4000">Até R$ 4000,00</option>
+        </select>
+      </fieldset>
+      <fieldset>
+        <label for="accept_pets">
+          {{iconAccepets}}
+          <span>Aceita pets</span>
+        </label>
+        <select name="accept_pets" id="accept_pets">
+          <option value="" disabled selected hidden>Selecione</option>
+          <option value="false">Tanto faz</option>
+          <option value="true">Sim</option>
+        </select>
+      </fieldset>
+      <fieldset>
+        <label for="rooms">
+          {{iconDetail}}
+          <span>Quartos</span>
+        </label>
+        <select name="rooms" id="rooms">
+          <option value="" disabled selected hidden>Selecione</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4+</option>
+        </select>
+      </fieldset>
+      <fieldset>
+        <label for="garage_spaces">
+          {{iconDetail}}
+          <span>Garagens</span>
+        </label>
+        <select name="garage_spaces" id="garage_spaces">
+          <option value="" disabled selected hidden>Selecione</option>
+          <option value="0">Tanto faz</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4+</option>
+        </select>
+      </fieldset>
+      <button type="button" class="btn_action" onclick="processStep(true)">Continuar</button>
+      <button type="button" class="btn_action_light" onclick="processStep(false)">
+        {{iconArrowLeft}}
+        <span>Voltar</span>
+      </button>
+    </form>
+    <form id="form_step_three">
+      <fieldset>
+        <label for="name">
+          {{iconDetail}}
+          <span>Nome</span>
+        </label>
+        <input type="text" name="name" id="name"/>
+      </fieldset>
+      <fieldset>
+        <label for="whatsapp">
+          {{iconWhatsapp}}
+          <span>Whatsapp</span>
+        </label>
+        <input type="text" name="whatsapp" id="whatsapp" oninput="maskPhone(this)" />
+      </fieldset>
+      <button type="button" class="btn_action" onclick="save()">Cadastrar</button>
+      <button type="button" class="btn_action_light" onclick="processStep(false)">
+        {{iconArrowLeft}}
+        <span>Voltar</span>
+      </button>
+    </form>
+  </main>
+</body>
+
+</html>
