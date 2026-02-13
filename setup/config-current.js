@@ -1,6 +1,6 @@
 const company = {
   name: 'teste2',
-  tenant: 'cantinho-teste5',
+  tenant: 'cantinho-teste6',
   dns: 'www.teste2.cantinho.co',
   GTM: 'GTM-XXXXXXX',
   siteMode: 'rent',
@@ -20,7 +20,7 @@ const company = {
   citiesAndDistricts: [
     {
       name: 'Espera Feliz - MG',
-      districts: ['centro']
+      districts: ['centro', 'joão clara', 'santa cecília', 'área de lazer']
     }
   ],
 };
