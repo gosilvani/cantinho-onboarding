@@ -25,7 +25,10 @@
     <header>
       <div>
         <h1>Imóveis para vendas</h1>
-        <a href="/administrativo/imoveis/vender/cadastrar/index.html">+ adicionar imóvel</a>
+        <div>
+          <a href="/administrativo/imoveis/vender/cadastrar/index.html">+ adicionar imóvel</a>
+          <a href="/administrativo/imoveis/vender/calcular-alcance/index.html">calcular alcance</a>
+        </div>
       </div>
       <select id="select_status_property">
         <option value="all">Todos imóveis</option>
@@ -33,6 +36,7 @@
         <option value="sold">Vendidos</option>
         <option value="maintenance">Em manutenção</option>
         <option value="constructing">Em construção</option>
+        <option value="published">Publicados</option>
       </select>
     </header>
     <section id="properties_container">

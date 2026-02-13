@@ -107,7 +107,14 @@ main header div h1 {
   margin-bottom: 5px;
 }
 
-main header div a {
+main header div div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+
+main header div div a {
   color: var(--buttons-transparent-text-color);
   font-size: 18px;
   font-weight: 500;
