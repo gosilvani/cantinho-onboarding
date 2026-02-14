@@ -3,29 +3,29 @@
 }
 
 :root {
-  --line-color: #D0A616;
-  --background-color: #f4f4f4;
+  --line-color: {{lineColor}};
+  --background-color: {{backgroundColor}};
 
-  --ads-background-color: #fff;
-  --ads-border-color: #ddd;
+  --ads-background-color: {{adsBackgroundColor}};
+  --ads-border-color: {{addBorderColor}};
 
-  --buttons-transparent-text-color: #D0A616;
-  --buttons-transparent-border-color: #D0A616;
+  --buttons-transparent-text-color: {{buttonsTransparentTextColor}};
+  --buttons-transparent-border-color: {{buttonsTransparentBorderColor}};
 
-  --buttons-solid-background-color: #D0A616;
-  --buttons-solid-text-color: #2C345C;
+  --buttons-solid-background-color: {{buttonsSolidBackgroundColor}};
+  --buttons-solid-text-color: {{buttonsSolidTextColor}};
 
-  --buttons-remove-background-color: #B21313;
-  --buttons-remove-text-color: #F2F2F2;
+  --buttons-remove-background-color: {{buttonsRemoveBackgroundColor}};
+  --buttons-remove-text-color: {{buttonsRemoveTextColor}};
 
-  --text-title-color: #2C345C;
-  --text-default-color: #2C345C;
-  --text-highlight-color: #D0A616;
+  --text-title-color: {{textTitleColor}};
+  --text-default-color: {{textDefaultColor}};
+  --text-highlight-color: {{textHiglightColor}};
 
-  --forms-label-color: #2C345C;
+  --forms-label-color: {{formsLabelColor}};
 
-  --forms-input-background-color: #D5DADE;
-  --forms-input-text-color: #2C345C;
+  --forms-input-background-color: {{formsInputBackgroundColor}};
+  --forms-input-text-color: {{formsInputTextColor}};
 }
 
 body {
