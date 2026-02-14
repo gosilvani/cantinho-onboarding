@@ -101,18 +101,32 @@
       <button type="button" class="btn_action" onclick="processStep(true)">Continuar</button>
     </form>
     <form id="form_step_two">
-      <fieldset>
-        <label for="price_range">
+      <fieldset id="camp_price_range_rent">
+        <label for="price_range_rent">
           {{iconDollar}}
           <span>Aluguel</span>
         </label>
-        <select name="price_range" id="price_range">
+        <select name="price_range_rent" id="price_range_rent">
           <option value="" disabled selected hidden>Selecione</option>
           <option value="800">Até R$ 800,00</option>
           <option value="1200">Até R$ 1200,00</option>
           <option value="1600">Até R$ 1600,00</option>
           <option value="2500">Até R$ 2500,00</option>
           <option value="4000">Até R$ 4000,00</option>
+        </select>
+      </fieldset>
+      <fieldset id="camp_price_range_sale">
+        <label for="price_range_sale">
+          {{iconDollar}}
+          <span>Valor do imóvel</span>
+        </label>
+        <select name="price_range_sale" id="price_range_sale">
+          <option value="" disabled selected hidden>Selecione</option>
+          <option value="150000">Até R$ 150.000,000</option>
+          <option value="250000">Até R$ 250.000,000</option>
+          <option value="400000">Até R$ 400.000,000</option>
+          <option value="600000">Até R$ 600.000,000</option>
+          <option value="1000000">Até R$ 1.000.000,000</option>
         </select>
       </fieldset>
       <fieldset>
