@@ -318,11 +318,19 @@ main fieldset input[type="text"] {
     margin-bottom: 10px;
   }
 
-  main form {
+  main form .content {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
     max-width: 850px;
+  }
+
+  main form .actions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 850px;
+    margin-top: 30px;
   }
 
   main form fieldset {
