@@ -1,9 +1,9 @@
 const company = {
-  name: 'teste2',
-  tenant: 'cantinho-teste6',
-  dns: 'www.teste2.cantinho.co',
+  name: 'imob both',
+  tenant: 'imob-both',
+  dns: 'www.imob-both.cantinho.co',
   GTM: 'GTM-XXXXXXX',
-  siteMode: 'rent',
+  siteMode: 'both',
   address: {
     street: 'Rua B',
     number: '10',
@@ -21,6 +21,10 @@ const company = {
     {
       name: 'Espera Feliz - MG',
       districts: ['centro', 'joão clara', 'santa cecília', 'área de lazer']
+    },
+    {
+      name: 'Carangola - MG',
+      districts: ['centro', 'coroado', 'santa emilia', 'cruzeiro']
     }
   ],
 };
@@ -54,16 +58,16 @@ const theme = {
     }
   },
   colors: {
-    line: '#000',
+    line: '#D0A616',
     background: '#f2f2f2',
     buttons: {
       transparent: {
-        text: '#000',
-        border: '#000'
+        text: '#D0A616',
+        border: '#D0A616'
       },
       solid: {
-        background: '#000',
-        text: '#fff'
+        background: '#D0A616',
+        text: '#2C345C'
       },
       remove: {
         background: '#ff0000',
@@ -71,20 +75,20 @@ const theme = {
       }
     },
     text: {
-      title: '#000',
-      default: '#000',
-      highlight: '#000'
+      title: '#2C345C',
+      default: '#2C345C',
+      highlight: '#D0A616'
     },
     forms: {
-      label: '#000',
+      label: '#2C345C',
       input: {
-        background: '#000',
-        text: '#fff'
+        background: '#D5DADE',
+        text: '#2C345C'
       }
     },
     ads: {
-      background: '#000',
-      border: '#000'
+      background: '#fff',
+      border: '#ddd'
     }
   }
 }
