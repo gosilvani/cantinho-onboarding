@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{name}} | Calcular alcance de imóveis para vender</title>
+  <link rel="icon" type="image/x-icon" href="/assets/icons/{{faviconFileName}}">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="./main.js"></script>
+</head>
+
+<body>
+  <header>
+    <a href="/index.html">
+      <img src="/assets/images/{{logoFileName}}" alt="logo" />
+    </a>
+    <nav>
+      <a href="/administrativo/index.html">Home</a>
+      <button onclick="logout()">Sair</button>
+    </nav>
+  </header>
+  <main>
+    <header>
+      <div>
+        <h1>Alcance de clientes</h1>
+        <div>
+          <a href="/administrativo/imoveis/alugar/calcular-alcance/index.html">calcular alcance</a>
+          <a href="/administrativo/imoveis/alugar/index.html">imóveis</a>
+        </div>
+      </div>
+    </header>
+    <section id="stepForm">
+      <h2>Características do imóvel</h2>
+      <form>
+        <div class="container">
+          <fieldset>
+            <label for="city">Cidade</label>
+            <select name="city" id="city" onchange="handleCityChange()" onfocus="buildCities()">
+              <option disabled selected hidden>Selecione</option>
+            </select>
+          </fieldset>
+          <fieldset>
+            <label for="district">Bairro</label>
+            <select name="district" id="district">
+              <option disabled selected hidden>Selecione</option>
+            </select>
+          </fieldset>
+          <fieldset>
+            <label for="type">Imóvel</label>
+            <select name="type" id="type">
+              <option value="" disabled selected hidden>Selecione</option>
+              <option value="Apartamento">Apartamento</option>
+              <option value="Casa">Casa</option>
+              <option value="Kitnet">Kitnet</option>
+            </select>
+          </fieldset>
+          <fieldset>
+            <label for="rooms">Quartos</label>
+            <div class="radio-group">
+              <label class="radio-option">
+                <input type="radio" name="rooms" id="rooms" value="1" id="room-1" />
+                <span>1</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="rooms" value="2" id="room-2" />
+                <span>2</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="rooms" value="3" id="room-3" />
+                <span>3</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="rooms" value="4" id="room-4" />
+                <span>4+</span>
+              </label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <label for="garage_spaces">Garagens</label>
+            <div class="radio-group" id="garage_spaces_group">
+              <label class="radio-option">
+                <input type="radio" name="garage_spaces" id="garage_spaces" value="0" id="garage_space-0" />
+                <span>0</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="garage_spaces" value="1" id="garage_space-1" />
+                <span>1</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="garage_spaces" value="2" id="garage_space-2" />
+                <span>2</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="garage_spaces" value="3" id="garage_space-3" />
+                <span>3</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="garage_spaces" value="4" id="garage_space-4" />
+                <span>4+</span>
+              </label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <label for="value">Custo mensal total</label>
+            <input type="text" id="value" oninput="formatCurrency(this)">
+          </fieldset>
+        </div>
+        <button type="button" onclick="calculateReach()">Calcular</button>
+      </form>
+    </section>
+    <section id="stepResult" class="hiddenStep">
+      <header>
+        <h2>Alcance estimado</h2>
+        <button type="button" class="btn_action_light" onclick="returnStep()">
+          {{iconArrowLeft}}
+          <span>Voltar</span>
+        </button>
+      </header>
+      <div>
+        <p id="reachResult">Encontramos <span class="highlight" id="all_clients">00</span> clientes interessados</p>
+        <ul>
+          <li>Seus clientes <span class="highlight" id="own_clients">00</span></li>
+          <li>Clientes do Marketplace <span class="highlight" id="marketplace_clients">00</span></li>
+        </ul>
+      </div>
+    </section>
+    <section id="stepNotify" class="hiddenStep">
+      <header>
+        <h2>Disparar notificação</h2>
+      </header>
+      <form>
+        <div class="container item">
+          <fieldset>
+            <label for="tenant_only">Público</label>
+            <select name="tenant_only" id="tenant_only">
+              <option value="" disabled selected hidden>Selecione</option>
+              <option value="true">Seus clientes</option>
+              <option value="false">Todos os clientes</option>
+            </select>
+          </fieldset>
+          <fieldset>
+            <label for="limit">Limite de envio</label>
+            <select name="limit" id="limit">
+              <option value="" disabled selected hidden>Selecione</option>
+              <option value="100">Sem limite</option>
+              <option value="20">20</option>
+              <option value="50">50</option>
+              <option value="70">70</option>
+              <option value="100">100</option>
+            </select>
+          </fieldset>
+        </div>
+        <button type="button" onclick="notifyClients()">Enviar notificação</button>
+      </form>
+    </section>
+  </main>
+</body>
+
+</html>

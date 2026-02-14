@@ -1,0 +1,288 @@
+:root {
+  --line-color: {{lineColor}};
+  --background-color: {{backgroundColor}};
+
+  --ads-background-color: {{adsBackgroundColor}};
+  --ads-border-color: {{addBorderColor}};
+
+  --buttons-transparent-text-color: {{buttonsTransparentTextColor}};
+  --buttons-transparent-border-color: {{buttonsTransparentBorderColor}};
+
+  --buttons-solid-background-color: {{buttonsSolidBackgroundColor}};
+  --buttons-solid-text-color: {{buttonsSolidTextColor}};
+
+  --buttons-remove-background-color: {{buttonsRemoveBackgroundColor}};
+  --buttons-remove-text-color: {{buttonsRemoveTextColor}};
+
+  --text-title-color: {{textTitleColor}};
+  --text-default-color: {{textDefaultColor}};
+  --text-highlight-color: {{textHiglightColor}};
+
+  --forms-label-color: {{formsLabelColor}};
+
+  --forms-input-background-color: {{formsInputBackgroundColor}};
+  --forms-input-text-color: {{formsInputTextColor}};
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--background-color);
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: var(--text-default-color);
+}
+
+select {
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+body>header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 20px 15px;
+  border-bottom: 4px solid var(--line-color);
+}
+
+body>header img {
+  height: 50px;
+  max-width: 140px;
+  width: auto;
+  object-fit: contain;
+}
+
+body>header a {
+  font-size: 16px;
+  color: var(--buttons-transparent-text-color);
+
+  display: flex;
+}
+
+body>header nav {
+  display: flex;
+  align-items: center;
+}
+
+body>header nav a {
+  font-size: 18px;
+}
+
+body>header nav button {
+  background: none;
+  color: var(--buttons-transparent-text-color);
+  font-size: 18px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  height: 40px;
+  font-weight: 500;
+}
+
+main {
+  padding: 20px;
+}
+
+main header div h1 {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+main header div div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+
+main header div div a {
+  color: var(--buttons-transparent-text-color);
+  font-size: 18px;
+  font-weight: 500;
+}
+
+main section {
+  margin-top: 30px;
+}
+
+main section h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+main form fieldset {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+main form label {
+  font-size: 16px;
+  color: var(--forms-label-color);
+  margin-bottom: 5px;
+}
+
+main form fieldset input,
+main form fieldset select {
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  margin-top: 5px;
+  font-size: 16px;
+  background-color: var(--forms-input-background-color);
+  color: var(--forms-input-text-color);
+  cursor: pointer;
+}
+
+.radio-group {
+  margin-top: 5px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+#garage_spaces_group {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.radio-option {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  background-color: var(--forms-input-background-color);
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 16px;
+}
+
+/* Esconde o input */
+.radio-option input[type="radio"] {
+  display: none;
+}
+
+/* Aplica a cor azul e letra branca no item inteiro selecionado */
+.radio-option:has(input[type="radio"]:checked) {
+  background-color: var(--forms-input-text-color);
+  color: var(--background-color);
+  font-weight: bold;
+}
+
+main form button {
+  margin-top: 30px;
+  width: 100%;
+  height: 40px;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: var(--buttons-solid-background-color);
+  color: var(--buttons-solid-text-color);
+  font-weight: 700;
+}
+
+.hiddenStep {
+  display: none;
+}
+
+#stepResult header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#stepResult button {
+  font-size: 18px;
+  background: none;
+  color: var(--buttons-transparent-text-color);
+}
+
+#stepResult li {
+  list-style: none;
+  margin-left: 5px;
+}
+
+.highlight {
+  color: var(--text-highlight-color);
+  font-weight: bold;
+}
+
+@media screen and (min-width: 768px) {
+  body>header {
+    padding: 35px 45px 20px;
+  }
+
+  body>header img {
+    max-width: 230px;
+  }
+
+  body>header a {
+    font-size: 20px;
+  }
+
+  main {
+    padding: 0 45px;
+  }
+
+  main header div {
+    margin-top: 30px;
+  }
+
+  main header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 1fr);
+    column-gap: 20px;
+    width: 100%;
+  }
+
+  .container .item {
+    width: 100%;
+    display: flex;
+    column-gap: 20px;
+  }
+
+  main form fieldset {
+    width: 100%;
+  }
+
+  main form .container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  main form .container>div,
+  main form .container>fieldset,
+  main form button {
+    width: 100%;
+    max-width: 500px;
+  }
+}
