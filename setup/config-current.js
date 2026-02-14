@@ -1,9 +1,9 @@
 const company = {
-  name: 'imob both',
-  tenant: 'imob-both',
-  dns: 'www.imob-both.cantinho.co',
+  name: 'imob sale',
+  tenant: 'imob-sale',
+  dns: 'www.imob-sale.cantinho.co',
   GTM: 'GTM-XXXXXXX',
-  siteMode: 'both',
+  siteMode: 'sale',
   address: {
     street: 'Rua B',
     number: '10',
