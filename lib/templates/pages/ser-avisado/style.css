@@ -238,7 +238,7 @@ main fieldset input[type="text"] {
   top: 100%;
   left: 0;
   width: 90%;
-  max-height: 200px;
+  max-height: 100px;
   overflow-y: auto;
   border: 1px solid var(--forms-input-background-color);
   background-color: var(--forms-input-background-color);
