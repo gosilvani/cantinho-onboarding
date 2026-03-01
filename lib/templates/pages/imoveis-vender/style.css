@@ -1,0 +1,786 @@
+:root {
+  --line-color: {{lineColor}};
+  --background-color: {{backgroundColor}};
+
+  --ads-background-color: {{adsBackgroundColor}};
+  --ads-border-color: {{addBorderColor}};
+
+  --buttons-transparent-text-color: {{buttonsTransparentTextColor}};
+  --buttons-transparent-border-color: {{buttonsTransparentBorderColor}};
+
+  --buttons-solid-background-color: {{buttonsSolidBackgroundColor}};
+  --buttons-solid-text-color: {{buttonsSolidTextColor}};
+
+  --buttons-remove-background-color: {{buttonsRemoveBackgroundColor}};
+  --buttons-remove-text-color: {{buttonsRemoveTextColor}};
+
+  --text-title-color: {{textTitleColor}};
+  --text-default-color: {{textDefaultColor}};
+  --text-highlight-color: {{textHiglightColor}};
+
+  --forms-label-color: {{formsLabelColor}};
+
+  --forms-input-background-color: {{formsInputBackgroundColor}};
+  --forms-input-text-color: {{formsInputTextColor}};
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--background-color);
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: var(--text-default-color);
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+select {
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+body>header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 20px 15px;
+  border-bottom: 4px solid var(--line-color);
+}
+
+dialog {
+  border: none;
+}
+
+header img {
+  height: 50px;
+  max-width: 140px;
+  width: auto;
+  object-fit: contain;
+}
+
+header a {
+  font-size: 16px;
+  color: var(--buttons-transparent-text-color);
+
+  display: flex;
+}
+
+header nav {
+  display: flex;
+}
+
+header>nav :first-child {
+  margin-right: 15px;
+}
+
+main {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.custom-select {
+  position: relative;
+  margin-top: 5px;
+}
+
+.select-trigger {
+  display: block;
+  text-align: left;
+  cursor: pointer;
+  width: 100%;
+  min-height: 40px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  margin-top: 5px;
+  font-size: 16px;
+  background-color: var(--forms-input-background-color);
+  color: var(--forms-input-text-color);
+}
+
+.options {
+  display: none;
+  position: absolute;
+  z-index: 10;
+  top: 100%;
+  left: 0;
+  width: 85%;
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid var(--forms-input-background-color);
+  background-color: var(--forms-input-background-color);
+  padding: 0.5rem;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.options.open {
+  display: block;
+}
+
+.options label {
+  display: block;
+  margin-bottom: 0.3rem;
+  cursor: pointer;
+}
+
+.options input[type="checkbox"] {
+  margin-right: 0.5rem;
+}
+
+.radio-group {
+  margin-top: 5px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.radio-option {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  background-color: var(--forms-input-background-color);
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 16px;
+}
+
+/* Esconde o input */
+.radio-option input[type="radio"] {
+  display: none;
+}
+
+/* Aplica a cor azul e letra branca no item inteiro selecionado */
+.radio-option:has(input[type="radio"]:checked) {
+  background-color: var(--forms-input-text-color);
+  color: var(--background-color);
+  font-weight: bold;
+}
+
+.hidden {
+  display: none;
+}
+
+.search {
+  flex: 1;
+  max-width: 900px
+}
+
+.search h1 {
+  font-size: 24px;
+  color: var(--text-title-color);
+  margin: 0 0 30px 0px;
+}
+
+.search p {
+  font-size: 16px;
+  margin: 0 0 10px 0;
+}
+
+main fieldset {
+  border: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin-top: 15px;
+}
+
+main fieldset label {
+  font-size: 16px;
+  color: var(--forms-label-color);
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+}
+
+main fieldset label svg {
+  width: 20px;
+  margin-right: 7px;
+}
+
+main fieldset select {
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  margin-top: 5px;
+  font-size: 16px;
+  background-color: var(--forms-input-background-color);
+  color: var(--forms-input-text-color);
+  cursor: pointer;
+}
+
+#label_districts {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#label_districts>div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#label_districts>div>div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 15px;
+}
+
+.search .actions button {
+  width: 100%;
+  height: 40px;
+  background-color: var(--buttons-solid-background-color);
+  margin-top: 30px;
+  border-radius: 5px;
+  color: var(--buttons-solid-text-color);
+  font-weight: 600;
+  font-size: 16px;
+  border: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search_result {
+  flex: 1;
+}
+
+.search_result > header fieldset {
+  margin-top: 15px;
+}
+
+.search_result > header div h1 {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text-title-color);
+  margin: 15px 0 0;
+}
+
+.search_result > header div button {
+  width: 100%;
+  height: 40px;
+  background-color: transparent;
+  margin-top: 10px;
+  color: var(--buttons-transparent-text-color);
+  font-weight: 500;
+  font-size: 16px;
+  display: flex;
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+}
+
+.property_list {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.property_list .ad {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  cursor: pointer;
+  padding: 15px;
+  background-color: var(--ads-background-color);
+  border-radius: 5px;
+  border: 1px solid var(--ads-border-color);
+}
+
+.carrosel {
+  width: 100%;
+  max-height: 300px;
+  border-radius: 5px;
+  background-color: var(--ads-background-color);
+  margin: 0;
+  position: relative;
+  width: 100%;
+  max-height: 230px;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.carrosel>img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+  display: block;
+}
+
+.carrosel button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--buttons-solid-background-color);
+  color: var(--buttons-solid-text-color);
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  z-index: 2;
+  width: 35px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carrosel .btn_prev {
+  border-radius: 0 5px 5px 0;
+  left: 0;
+  display: none;
+}
+
+.carrosel .btn_next {
+  border-radius: 5px 0 0 5px;
+  right: 0;
+}
+
+.ad .content {
+  padding: 10px 10px 5px;
+  margin: 0;
+}
+
+.ad .content h3 {
+  font-size: 18px;
+  color: var(--text-highlight-color);
+  font-weight: 600;
+  margin: 0;
+}
+
+.ad .content .type {
+  font-size: 16px;
+  color: var(--text-default-color);
+  margin: 5px 0 0;
+
+  display: flex;
+  align-items: center;
+}
+
+.ad .content .type svg {
+  width: 20px;
+  margin-right: 5px;
+}
+
+.ad .content .details {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.ad .content .details svg {
+  width: 20px;
+  margin-right: 5px;
+}
+
+.ad .content .details ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ad .content .details ul li {
+  margin-right: 10px;
+  font-size: 16px;
+  color: var(--text-default-color);
+}
+
+.ad .content address {
+  font-size: 16px;
+  color: var(--text-default-color);
+  margin-top: 5px;
+  font-style: normal;
+  max-width: 85%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.property_popup {
+  border: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  max-width: 100%;
+  height: 100vh;
+  max-height: 100vh;
+  background-color: var(--background-color);
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.property_popup .property_content {
+  height: 100%;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.property_popup .property_content  #type_property {
+  display: flex;
+  align-items: center;
+  margin-top: 25px;
+
+  color: var(--text-default-color);
+}
+
+.property_popup .property_content #type_property h2 {
+  font-size: 22px;
+  margin: 0;
+}
+
+.property_popup .property_content .details #type_property svg {
+  width: 25px;
+  margin-right: 7px;
+}
+
+.property_popup .property_content .details #infos {
+  display: flex;
+  align-items: center;
+  color: var(--text-default-color);
+  font-size: 18px;
+  margin-top: 5px;
+}
+
+.property_popup .property_content .details #infos svg {
+  width: 18px;
+  margin-right: 7px;
+}
+
+.property_popup .property_content .details #infos div {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.property_popup .property_content .details address {
+  font-style: normal;
+  color: var(--text-default-color);
+  font-size: 18px;
+  margin-top: 5px;
+}
+
+.property_popup .property_content .values {
+  font-size: 18px;
+  color: var(--text-highlight-color);
+  margin-top: 50px;
+}
+
+.property_popup .property_content .values div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5px;
+  border-bottom: 1px solid var(--line-color);
+  height: 40px;
+}
+
+.property_popup .property_content .responsible_owner {
+  margin-top: 30px;
+  background-color: var(--forms-input-background-color);
+  height: 45px;
+  width: 100%;
+  border-radius: 5px;
+  color: var(--text-default-color);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.property_popup .property_content .responsible_owner svg {
+  width: 15px;
+  margin-right: 7px;
+}
+
+
+.property_popup .property_content .responsible_company {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.property_popup .property_content .responsible_company div {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 200px;
+  height: 70px;
+}
+
+.property_popup .property_content .responsible_company div img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.property_popup .property_content .actions {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+
+.property_popup .property_content .actions #contact {
+  margin-top: 5px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 45px;
+  border-radius: 5px;
+  color: var(--buttons-solid-text-color);
+  background-color: var(--buttons-solid-background-color);
+  font-weight: 600;
+}
+
+.property_popup .property_content .actions #contact svg {
+  width: 20px;
+  margin-right: 7px;
+}
+
+.property_popup .property_content .actions button {
+  margin-top: 15px;
+  font-size: 18px;
+  color: var(--buttons-transparent-text-color);
+  display: flex;
+  align-items: center;
+}
+
+.property_popup .property_content .actions button svg {
+  width: 17px;
+  margin-right: 7px;
+}
+
+
+.register_demand {
+  background-color: var(--background-color);
+  border-radius: 5px;
+  padding: 30px 20px;
+  border: none;
+}
+
+.register_demand h2 {
+  font-size: 18px;
+  color: var(--text-title-color);
+  margin: 0 0 15px 0;
+}
+
+.register_demand p {
+  font-size: 16px;
+  color: var(--text-default-color);
+  margin: 0;
+}
+
+.register_demand form fieldset {
+  margin-top: 15px;
+}
+
+.register_demand form label {
+  padding: 0 5px;
+}
+
+.register_demand form label svg {
+  width: 20px;
+  margin-right: 7px;
+}
+
+.register_demand form input {
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  margin-top: 5px;
+  font-size: 16px;
+  background-color: var(--forms-input-background-color);
+  color: var(--forms-input-text-color);
+}
+
+.register_demand form .actions {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+
+.register_demand form .actions .save {
+  width: 100%;
+  height: 40px;
+  background-color: var(--buttons-solid-background-color);
+  color: var(--buttons-solid-text-color);
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.register_demand form .actions .close {
+  margin-top: 15px;
+  width: 100%;
+  max-width: 150px;
+  height: 40px;
+  background-color: transparent;
+  color: var(--buttons-transparent-text-color);
+  border: none;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.register_demand form .actions .close svg {
+  width: 17px;
+  margin-right: 7px;
+}
+
+@media screen and (min-width: 768px) {
+  body>header {
+    padding: 35px 45px 20px;
+  }
+
+  header img {
+    max-width: 230px;
+  }
+
+  header a {
+    font-size: 20px;
+  }
+
+  main {
+    padding: 30px 45px 10px;
+    flex-direction: row;
+  }
+
+  main form .content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 280px));
+    justify-content: start;
+    gap: 20px;
+  }
+
+  main form .actions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 280px));
+    gap: 20px;
+  }
+
+  main form fieldset {
+    margin-top: 0;
+  }
+
+  .search_result header fieldset {
+    max-width: 350px;
+    margin-top: 0;
+  }
+
+  .search_result header div {
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+
+  .search_result > header div button {
+    width: auto;
+    padding: 20px;
+  }
+
+  .property_list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 400px));
+    gap: 15px;
+  }
+
+  .ad {
+    margin-bottom: 0;
+  }
+
+  .ad figure button {
+    width: 35px;
+    height: 35px;
+  }
+
+  .property_popup {
+    border: none;
+    padding: 0;
+
+    border-radius: 5px;
+    width: 90vw;
+    max-width: 800px;
+    height: 95vh;
+    max-height: 750px;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .property_popup .property_content {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 20px;
+  }
+
+  .property_popup .property_content .carrosel {
+    width: 80%;
+    max-width: 350px;
+  }
+
+  .property_popup .property_content  #type_property {
+    margin: 0;
+  }
+
+  .property_popup .property_content .values {
+    margin-top: 30px;
+  }
+
+  .register_demand {
+    max-width: 450px;
+  }
+
+  .register_demand .actions {
+    gap: 0;
+  }
+}

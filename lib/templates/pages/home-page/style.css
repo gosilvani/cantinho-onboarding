@@ -1,0 +1,196 @@
+:root {
+  --line-color: {{lineColor}};
+  --background-color: {{backgroundColor}};
+
+  --ads-background-color: {{adsBackgroundColor}};
+  --ads-border-color: {{addBorderColor}};
+
+  --buttons-transparent-text-color: {{buttonsTransparentTextColor}};
+  --buttons-transparent-border-color: {{buttonsTransparentBorderColor}};
+
+  --buttons-solid-background-color: {{buttonsSolidBackgroundColor}};
+  --buttons-solid-text-color: {{buttonsSolidTextColor}};
+
+  --buttons-remove-background-color: {{buttonsRemoveBackgroundColor}};
+  --buttons-remove-text-color: {{buttonsRemoveTextColor}};
+
+  --text-title-color: {{textTitleColor}};
+  --text-default-color: {{textDefaultColor}};
+  --text-highlight-color: {{textHiglightColor}};
+
+  --forms-label-color: {{formsLabelColor}};
+
+  --forms-input-background-color: {{formsInputBackgroundColor}};
+  --forms-input-text-color: {{formsInputTextColor}};
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--background-color);
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: var(--text-default-color);
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+select {
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 20px 15px;
+  border-bottom: 4px solid var(--line-color);
+}
+
+header img {
+  height: 50px;
+  max-width: 140px;
+  width: auto;
+  object-fit: contain;
+}
+
+header a {
+  font-size: 16px;
+  color: var(--buttons-transparent-text-color);
+
+  display: flex;
+}
+
+header nav {
+  display: flex;
+}
+
+header nav :first-child {
+  margin-right: 15px;
+}
+
+main {
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+}
+
+main nav h1 {
+  font-size: clamp(24px, 5vw, 36px);
+  font-weight: 500;
+  margin-bottom: 50px;
+}
+
+main nav label {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  color: var(--forms-label-color);
+}
+
+main nav label svg {
+  margin-right: 5px;
+}
+
+main nav select {
+  width: 100%;
+  height: 45px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  margin: 5px 0 15px;
+  font-size: 16px;
+  background-color: var(--forms-input-background-color);
+  color: var(--forms-input-text-color);
+}
+
+main nav div {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  gap: 20px;
+}
+
+main nav div button {
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 16px;
+  background-color: var(--buttons-solid-background-color);
+  color: var(--buttons-solid-text-color);
+  font-weight: 600;
+  height: 45px;
+  border-radius: 6px;
+}
+
+main nav div button svg {
+  margin-right: 8px;
+  width: 20px;
+}
+
+main > img {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  header {
+    padding: 35px 45px 20px;
+  }
+
+  header img {
+    max-width: 230px;
+  }
+
+  header a {
+    font-size: 20px;
+  }
+
+  main {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 45px;
+  }
+
+  main nav {
+    width: 50%;
+  }
+
+  main > img {
+    display: block;
+    width: 30%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  main nav h1 {
+    font-size: clamp(28px, 4vw, 40px);
+  }
+
+  main nav {
+    width: 50%;
+    padding-right: 40px;
+  }
+
+  main > img {
+    width: 40%;
+    max-height: 450px;
+  }
+}

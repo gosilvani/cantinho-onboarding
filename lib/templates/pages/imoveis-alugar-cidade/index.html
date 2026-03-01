@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{name}} | Imóveis para alugar em {{city}}</title>
+  <meta name="description" content="{{metaDescription}}">
+  <link rel="icon" type="image/x-icon" href="/assets/icons/{{faviconFileName}}">
+  <link rel="stylesheet" href="../style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <script>
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', '{{GTM}}');
+  </script>
+  <script src="main.js" defer></script>
+</head>
+
+<body>
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id={{GTM}}" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <header>
+    <a href="/index.html">
+      <img src="/assets/images/{{logoFileName}}" alt="logo" />
+    </a>
+    <nav>
+      <a href="https://wa.me/{{whatsapp}}" class="contact" target="_blank" rel="noopener noreferrer">Contato</a>
+      <a href="/sobre/index.html">Sobre</a>
+    </nav>
+  </header>
+  <main>
+    <aside id="search" class="search">
+      <h1>Encontre o imóvel ideal para você</h1>
+      <p>Preencha os dados abaixo para buscar o seu cantinho em {{city}}</p>
+      <form>
+        <div class="content">
+          <fieldset class="multi-select">
+            <label id="label_districts">
+              <div>
+                {{iconSearch}}
+                <span>Bairro</span>
+              </div>
+              <div>
+                <div>
+                  <input type="radio" id="district_mode" name="district_mode" value="select" checked>
+                  <label for="select">Quero</label>
+                </div>
+                <div>
+                  <input type="radio" id="district_mode" name="district_mode" value="excluded">
+                  <label for="excluded">Evitar</label>
+                </div>
+              </div>
+            </label>
+            <div class="custom-select" name="districts" id="districts">
+              <button type="button" class="select-trigger" id="districts_select">Selecione</button>
+              <div class="options" id="options_districts">
+              </div>
+            </div>
+          </fieldset>
+          <fieldset>
+            <label for="type_property">
+              {{iconHome}}
+              <span>Imóvel</span>
+            </label>
+            <select name="type_property" id="type_property">
+              <option value="" disabled selected hidden>Selecione</option>
+              <option value="Apartamento">Apartamento</option>
+              <option value="Casa">Casa</option>
+              <option value="Kitnet">Kitnet</option>
+            </select>
+          </fieldset>
+          <fieldset id="camp_value_range_sale">
+            <label for="value_range">
+              {{iconDollar}}
+              <span>Aluguel</span>
+            </label>
+            <select name="value_range" id="value_range">
+              <option value="" disabled selected hidden>Selecione</option>
+              <option value="800">Até R$ 800,00</option>
+              <option value="1200">Até R$ 1200,00</option>
+              <option value="1600">Até R$ 1600,00</option>
+              <option value="2500">Até R$ 2500,00</option>
+              <option value="4000">Até R$ 4000,00</option>
+              <option value="999999">+ R$ 4000,00</option>
+            </select>
+          </fieldset>
+          <fieldset>
+              <label for="required_accepts_pets">
+                {{iconAccepets}}
+                <span>Aceita pets</span>
+            </label>
+            <select name="required_accepts_pets" id="required_accepts_pets">
+              <option value="" disabled selected hidden>Selecione</option>
+              <option value="false">Tanto faz</option>
+              <option value="true">Sim</option>
+            </select>
+          </fieldset>
+          <fieldset>
+            <label for="rooms">
+              {{iconDetail}}
+              <span>Quartos</span>
+            </label>
+            <select name="rooms" id="rooms">
+              <option value="" disabled selected hidden>Selecione</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4+</option>
+            </select>
+          </fieldset>
+          <fieldset>
+            <label for="garage_spaces">
+              {{iconDetail}}
+              <span>Garagens</span>
+            </label>
+            <select name="garage_spaces" id="garage_spaces">
+              <option value="" disabled selected hidden>Selecione</option>
+              <option value="0">Tanto faz</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4+</option>
+            </select>
+          </fieldset>
+        </div>
+        <div class="actions">
+          <button type="button" onclick="searchProperties()">Buscar imóveis</button>
+        </div>
+      </form>
+    </aside>
+
+    <section id="search_result" class="search_result hidden">
+      <header>
+        <fieldset>
+          <label for="city">
+            {{iconMap}}
+            <span>Cidade</span>
+          </label>
+          <select name="city" id="select_city" onchange="handleCityChange(this)">
+          </select>
+        </fieldset>
+        <div>
+          <h1>Resultados da sua busca</h1>
+          <button type="button" onclick="renewSearsh()">Ajustar busca</button>
+        </div>
+      </header>
+      <div id="item_result" class="property_list">
+      </div>
+    </section>
+
+    <dialog id="property_detail" class="property_popup">
+      <div id="property_content" class="property_content"></div>
+    </dialog>
+
+    <dialog class="register_demand" id="register_demand_search_empty">
+      <div>
+        <h2>Não encontramos imóveis com seus critérios</h2>
+        <p>Deixe seu nome e WhatsApp para ser avisado quando surgir um imóvel que combine com o que você está procurando.</p>
+      </div>
+      <form>
+        <fieldset>
+          <label for="name_search_empty">
+            {{iconDetail}}
+            <span>Nome</span>
+          </label>
+          <input type="text" id="name_search_empty" name="name_search_empty" placeholder="Ex: Maria" required>
+        </fieldset>
+        <fieldset>
+          <label for="whatsapp_search_empty">
+            {{iconWhatsapp}}
+            <span>WhatsApp</span>
+          </label>
+          <input type="tel" id="whatsapp_search_empty" name="whatsapp_search_empty" required pattern="\d{10,11}">
+        </fieldset>
+        <div class="actions">
+          <button type="button" class="save" onclick="processRegistDemand('search_empty')">Quero ser avisado</button>
+          <button type="button" class="close" onclick="closeDialog('register_demand_search_empty')">
+            {{iconArrowLeft}}
+            <span>Sair</span>
+          </button>
+        </div>
+      </form>
+    </dialog>
+
+    <dialog class="register_demand" id="register_demand_search_not_empty">
+      <div>
+        <h2>Não gostou dos imóveis?</h2>
+        <p>Deixe seu nome e WhatsApp para ser avisado quando surgirem novos imóveis que combine com o que você está procurando.</p>
+      </div>
+      <form>
+        <fieldset>
+          <label for="name_search_not_empty">
+            {{iconDetail}}
+            <span>Nome</span>
+          </label>
+          <input type="text" id="name_search_not_empty" name="name_search_not_empty" placeholder="Ex: Maria" required>
+        </fieldset>
+        <fieldset>
+          <label for="whatsapp_search_not_empty">
+            {{iconWhatsapp}}
+            <span>WhatsApp</span>
+          </label>
+          <input type="tel" id="whatsapp_search_not_empty" name="whatsapp_search_not_empty" required pattern="\d{10,11}">
+        </fieldset>
+        <div class="actions">
+          <button type="button" class="save" onclick="processRegistDemand('search_not_empty')">Quero ser avisado</button>
+          <button type="button" class="close" onclick="closeDialog('register_demand_search_not_empty')">
+            {{iconArrowLeft}}
+            <span>Sair</span>
+          </button>
+        </div>
+      </form>
+    </dialog>
+  </main>
+</body>
+
+</html>

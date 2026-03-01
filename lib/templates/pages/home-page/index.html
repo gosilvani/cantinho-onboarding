@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{name}} | Home</title>
+  <meta name="description" content="{{metaDescription}}">
+  <link rel="icon" type="image/x-icon" href="/assets/icons/{{faviconFileName}}">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <script>
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', '{{GTM}}');
+  </script>
+  <script src="main.js"></script>
+</head>
+
+<body>
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id={{GTM}}" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <header>
+    <a href="/index.html">
+      <img src="/assets/images/{{logoFileName}}" alt="logo" />
+    </a>
+    <nav>
+      <a href="https://wa.me/55{{whatsapp}}" class="contact" target="_blank" rel="noopener noreferrer">Contato</a>
+      <a href="/sobre/index.html">Sobre</a>
+    </nav>
+  </header>
+  <main>
+    <nav>
+      <h1>{{heroText}}</h1>
+      <label for="selected_city">
+        {{iconMap}}
+        Cidade
+      </label>
+      <select name="selected_city" id="selected_city">
+        <option disabled selected hidden>Selecione</option>
+      </select>
+      <div>
+        <button data-action="buy">
+          {{iconDollar}}
+          <span>Comprar</span>
+        </button>
+        <button data-action="rent">
+          {{iconCalendar}}
+          <span>Alugar</span>
+        </button>
+      </div>
+    </nav>
+    <img src="/assets/images/{{heroImageFileName}}" alt="hero-image" />
+  </main>
+</body>
+
+</html>
