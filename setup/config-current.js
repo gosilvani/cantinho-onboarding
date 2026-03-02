@@ -1,9 +1,9 @@
 const company = {
-  name: 'imob sale',
-  tenant: 'imob-sale',
-  dns: 'www.imob-sale.cantinho.co',
+  name: 'cantinho',
+  tenant: 'cantinho',
+  dns: 'www.cantinho.co',
   GTM: 'GTM-XXXXXXX',
-  siteMode: 'sale',
+  siteMode: 'both',
   address: {
     street: 'Rua B',
     number: '10',
@@ -13,7 +13,7 @@ const company = {
     state: 'MG',
   },
   contact: {
-    email: 'teste@gmail.com',
+    email: 'cantinho-mkt@gmail.com',
     phone: '32984835145',
     whatsapp: '32984835145'
   },
@@ -30,8 +30,8 @@ const company = {
 };
 
 const user = {
-  name: 'teste',
-  email: 'teste@gmail.com',
+  name: 'Silvani Gonçalves',
+  email: 'go.silvani@gmail.com',
   password: '10203050',
   type: 'companyAdmin',
 };
@@ -59,7 +59,7 @@ const theme = {
   },
   colors: {
     line: '#D0A616',
-    background: '#f2f2f2',
+    background: '#F4F4F4',
     buttons: {
       transparent: {
         text: '#D0A616',
@@ -70,8 +70,8 @@ const theme = {
         text: '#2C345C'
       },
       remove: {
-        background: '#ff0000',
-        text: '#fff'
+        background: '#B21313',
+        text: '#F2F2F2'
       }
     },
     text: {
