@@ -90,6 +90,10 @@ main {
   padding: 20px;
 }
 
+main nav {
+  width: 100%;
+}
+
 main nav h1 {
   font-size: clamp(24px, 5vw, 36px);
   font-weight: 500;
