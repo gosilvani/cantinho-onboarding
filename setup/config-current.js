@@ -1,7 +1,7 @@
 const company = {
-  name: 'cantinho-teste',
-  tenant: 'cantinho-teste',
-  dns: 'www.test-v1.cantinho.co',
+  name: 'Mariana Rodrigues Corretora de Imóveis',
+  tenant: 'demo-mariana-rodrigues-corretora-de-imoveis',
+  dns: 'www.marianarodrigues.cantinho.co',
   GTM: 'GTM-XXXXXXX',
   siteMode: 'both',
   address: {
@@ -13,25 +13,21 @@ const company = {
     state: 'MG',
   },
   contact: {
-    email: 'cantinho-mkt@gmail.com',
-    phone: '32984835145',
-    whatsapp: '32984835145'
+    email: 'mariana@gmail.com',
+    phone: '32984375738',
+    whatsapp: '32984375738'
   },
   citiesAndDistricts: [
     {
       name: 'Espera Feliz - MG',
       districts: ['centro', 'joão clara', 'santa cecília', 'área de lazer']
-    },
-    {
-      name: 'Carangola - MG',
-      districts: ['centro', 'coroado', 'santa emilia', 'cruzeiro']
     }
   ],
 };
 
 const user = {
-  name: 'Silvani Gonçalves',
-  email: 'go.silvani@gmail.com',
+  name: 'Mariana Rodrigues',
+  email: 'mariana@gmail.com',
   password: '10203050',
   type: 'companyAdmin',
 };
@@ -58,16 +54,16 @@ const theme = {
     }
   },
   colors: {
-    line: '#D0A616',
+    line: '#3E4095',
     background: '#F4F4F4',
     buttons: {
       transparent: {
-        text: '#D0A616',
-        border: '#D0A616'
+        text: '#3E4095',
+        border: '#3E4095'
       },
       solid: {
-        background: '#D0A616',
-        text: '#2C345C'
+        background: '#3E4095',
+        text: '#EBEBEB'
       },
       remove: {
         background: '#B21313',
@@ -75,15 +71,15 @@ const theme = {
       }
     },
     text: {
-      title: '#2C345C',
-      default: '#2C345C',
-      highlight: '#D0A616'
+      title: '#3E4095',
+      default: '#3E4095',
+      highlight: '#3E4095'
     },
     forms: {
-      label: '#2C345C',
+      label: '#3E4095',
       input: {
         background: '#D5DADE',
-        text: '#2C345C'
+        text: '#3E4095'
       }
     },
     ads: {
