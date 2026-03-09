@@ -435,8 +435,8 @@ main fieldset select {
   margin: 0;
   width: 100%;
   max-width: 100%;
-  height: 100vh;
-  max-height: 100vh;
+  height: 100dvh;
+  max-height: 100dvh;
   background-color: var(--background-color);
 }
 
@@ -589,6 +589,7 @@ dialog::backdrop {
   color: var(--buttons-transparent-text-color);
   display: flex;
   align-items: center;
+  background: none;
 }
 
 .property_popup .property_content .actions button svg {

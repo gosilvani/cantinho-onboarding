@@ -1,7 +1,7 @@
 const company = {
-  name: 'Mariana Rodrigues Corretora de Imóveis',
-  tenant: 'demo-mariana-rodrigues-corretora-de-imoveis',
-  dns: 'www.marianarodrigues.cantinho.co',
+  name: 'Tairone Rezende',
+  tenant: 'tairone-rezende',
+  dns: 'www.taironerezende.cantinho.co',
   GTM: 'GTM-XXXXXXX',
   siteMode: 'both',
   address: {
@@ -13,9 +13,9 @@ const company = {
     state: 'MG',
   },
   contact: {
-    email: 'mariana@gmail.com',
-    phone: '32984375738',
-    whatsapp: '32984375738'
+    email: 'cantinho-mkt@gmail.com',
+    phone: '32984423771',
+    whatsapp: '32984423771'
   },
   citiesAndDistricts: [
     {
@@ -26,8 +26,8 @@ const company = {
 };
 
 const user = {
-  name: 'Mariana Rodrigues',
-  email: 'mariana@gmail.com',
+  name: 'Tairone',
+  email: 'tairone@gmail.com',
   password: '10203050',
   type: 'companyAdmin',
 };
@@ -54,15 +54,15 @@ const theme = {
     }
   },
   colors: {
-    line: '#3E4095',
+    line: '#015699',
     background: '#F4F4F4',
     buttons: {
       transparent: {
-        text: '#3E4095',
-        border: '#3E4095'
+        text: '#015699',
+        border: '#015699'
       },
       solid: {
-        background: '#3E4095',
+        background: '#015699',
         text: '#EBEBEB'
       },
       remove: {
@@ -71,15 +71,15 @@ const theme = {
       }
     },
     text: {
-      title: '#3E4095',
-      default: '#3E4095',
-      highlight: '#3E4095'
+      title: '#2C345C',
+      default: '#2C345C',
+      highlight: '#015699'
     },
     forms: {
-      label: '#3E4095',
+      label: '#2C345C',
       input: {
         background: '#D5DADE',
-        text: '#3E4095'
+        text: '#2C345C'
       }
     },
     ads: {
