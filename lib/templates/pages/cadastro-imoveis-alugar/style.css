@@ -148,7 +148,7 @@ main section a article {
   border-bottom: 1px solid var(--line-color);
 }
 
-#properties_filtereds_container {
+#properties_filtered_container {
   display: none;
 }
 
