@@ -1,6 +1,6 @@
 const company = {
   name: 'Léo Imóveis',
-  tenant: 'leo-imoveis',
+  tenant: 'leo-imoveis-test',
   dns: 'www.leoimoveis.cantinho.co',
   GTM: 'GTM-NMNWZRNJ',
   siteMode: 'sale',
