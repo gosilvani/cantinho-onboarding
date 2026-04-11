@@ -1,33 +1,33 @@
 const company = {
-  name: 'Tairone Rezende',
-  tenant: 'tairone-rezende',
-  dns: 'www.taironerezende.cantinho.co',
-  GTM: 'GTM-XXXXXXX',
-  siteMode: 'both',
+  name: 'Léo Imóveis',
+  tenant: 'leo-imoveis',
+  dns: 'www.leoimoveis.cantinho.co',
+  GTM: 'GTM-NMNWZRNJ',
+  siteMode: 'sale',
   address: {
-    street: 'Rua B',
-    number: '10',
-    complement: 'Apto 101',
+    street: 'Av. João Vieira da Costa',
+    number: '970',
+    complement: 'Loja 1',
     district: 'Centro',
     city: 'Espera Feliz',
     state: 'MG',
   },
   contact: {
-    email: 'cantinho-mkt@gmail.com',
-    phone: '32984423771',
-    whatsapp: '32984423771'
+    email: 'elielfx@yahoo.com.br',
+    phone: '32984163506',
+    whatsapp: '32984163506'
   },
   citiesAndDistricts: [
     {
       name: 'Espera Feliz - MG',
-      districts: ['centro', 'joão clara', 'santa cecília', 'área de lazer']
+      districts: ['centro', 'mineradora', 'retas', 'área de lazer', 'joão do roque', 'santa cecília', 'são francisco', 'patronato', 'waltair', 'santa luzia', 'floresta', 'joão clara', 'santa inês', 'novo horizonte', 'vale do sol']
     }
   ],
 };
 
 const user = {
-  name: 'Tairone',
-  email: 'tairone@gmail.com',
+  name: 'Eliel Ferreira',
+  email: 'elielfx@yahoo.com.br',
   password: '10203050',
   type: 'companyAdmin',
 };
@@ -38,32 +38,32 @@ const theme = {
   contents: {
     home: {
       heroImageFileName: 'hero-image.svg',
-      heroText: 'Teste',
-      metaDescription: 'Teste'
+      heroText: 'O seu melhor negócio está aqui',
+      metaDescription: 'Encontre as melhores oportunidades em imóveis com a Léo Imóveis. Compra e venda com atendimento confiável e as melhores opções da região.'
     },
     about: {
       heroImageFileName: 'hero-image.svg',
-      heroText: 'Teste',
-      metaDescription: 'Teste'
+      heroText: 'O seu melhor negócio está aqui. Na Léo Imóveis, trabalhamos para conectar você às melhores oportunidades do mercado, com atendimento próximo, transparência e compromisso em cada negociação. Nosso objetivo é tornar sua experiência simples, segura e eficiente.',
+      metaDescription: 'Conheça a Léo Imóveis e nossa dedicação em oferecer atendimento de qualidade, transparência e as melhores oportunidades para você comprar e vender.'
     },
     propertySale: {
-      metaDescription: 'Teste'
+      metaDescription: 'Confira imóveis à venda com a Léo Imóveis em {{city}}. Casas, apartamentos e terrenos com ótimas oportunidades para você investir ou morar.'
     },
     propertyRent: {
-      metaDescription: 'Teste'
+      metaDescription: 'Encontre imóveis para alugar com a Léo Imóveis em {{city}}. Opções ideais para morar com praticidade, segurança e excelente custo-benefício.'
     }
   },
   colors: {
-    line: '#015699',
-    background: '#F4F4F4',
+    line: '#D9CE0F',
+    background: '#E6E6E6',
     buttons: {
       transparent: {
-        text: '#015699',
-        border: '#015699'
+        text: '#201E1E',
+        border: '#201E1E'
       },
       solid: {
-        background: '#015699',
-        text: '#EBEBEB'
+        background: '#D9CE0F',
+        text: '#201E1E'
       },
       remove: {
         background: '#B21313',
@@ -71,15 +71,15 @@ const theme = {
       }
     },
     text: {
-      title: '#2C345C',
-      default: '#2C345C',
-      highlight: '#015699'
+      title: '#201E1E',
+      default: '#201E1E',
+      highlight: '#D9CE0F'
     },
     forms: {
-      label: '#2C345C',
+      label: '#201E1E',
       input: {
         background: '#D5DADE',
-        text: '#2C345C'
+        text: '#201E1E'
       }
     },
     ads: {

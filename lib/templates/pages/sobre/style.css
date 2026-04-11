@@ -49,7 +49,7 @@ header {
 }
 
 header img {
-  height: 50px;
+  height: 80px;
   max-width: 140px;
   width: auto;
   object-fit: contain;
