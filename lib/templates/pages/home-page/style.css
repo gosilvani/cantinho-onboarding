@@ -126,13 +126,13 @@ main nav select {
 
 main nav div {
   display: grid;
-  grid-auto-flow: column;
+  grid-auto-flow: row;
   grid-auto-columns: 1fr;
-  gap: 20px;
+  gap: 10px;
 }
 
 main nav div button {
-  display: none;
+  display: block;
   align-items: center;
   justify-content: center;
 
@@ -142,6 +142,7 @@ main nav div button {
   font-weight: 600;
   height: 45px;
   border-radius: 6px;
+  padding: 15px;
 }
 
 main nav div button svg {
@@ -183,7 +184,7 @@ main > img {
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1100px) {
   main nav h1 {
     font-size: clamp(28px, 4vw, 40px);
   }
@@ -196,5 +197,10 @@ main > img {
   main > img {
     width: 40%;
     max-height: 450px;
+  }
+
+  main nav div {
+    grid-auto-flow: column;
+    gap: 20px;
   }
 }
