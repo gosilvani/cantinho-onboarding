@@ -167,7 +167,7 @@
             {{iconWhatsapp}}
             <span>WhatsApp</span>
           </label>
-          <input type="tel" id="whatsapp_search_empty" name="whatsapp_search_empty" required pattern="\d{10,11}">
+          <input type="tel" id="whatsapp_search_empty" name="whatsapp_search_empty" required pattern="\d{10,11}" oninput="maskPhone(this)">
         </fieldset>
         <div class="actions">
           <button type="button" class="save" onclick="processRegistDemand('search_empty')">Quero ser avisado</button>
@@ -197,7 +197,7 @@
             {{iconWhatsapp}}
             <span>WhatsApp</span>
           </label>
-          <input type="tel" id="whatsapp_search_not_empty" name="whatsapp_search_not_empty" required pattern="\d{10,11}">
+          <input type="tel" id="whatsapp_search_not_empty" name="whatsapp_search_not_empty" required pattern="\d{10,11}" oninput="maskPhone(this)">
         </fieldset>
         <div class="actions">
           <button type="button" class="save" onclick="processRegistDemand('search_not_empty')">Quero ser avisado</button>
