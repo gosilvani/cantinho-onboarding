@@ -136,6 +136,10 @@ main section {
   margin-top: 30px;
 }
 
+main section a {
+  width: 100%;
+}
+
 main section a article {
   padding: 0px 5px;
   color: var(--text-default-color);
@@ -144,8 +148,25 @@ main section a article {
   white-space: nowrap;
   text-overflow: ellipsis;
   white-space: nowrap;
-  margin-bottom: 15px;
+  max-width: 100%
+}
+
+.property-card {
   border-bottom: 1px solid var(--line-color);
+  height: 70px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  max-width: 850px;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+}
+
+.card_buttons_actions {
+  display: none;
 }
 
 #properties_filtered_container {
@@ -188,5 +209,57 @@ main section a article {
     display: flex;
     gap: 20px;
     max-width: 900px;
+  }
+
+  main section a {
+    padding: 0px 5px;
+    color: var(--text-default-color);
+    font-weight: 16px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: calc(100% - 300px);
+    min-width: 0;
+  }
+
+  .card_buttons_actions {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 10px;
+    justify-content: flex-end;
+    padding: 5px 12px;
+    width: 300px;
+    flex-shrink: 0;
+    opacity: 0;
+    max-height: 0;
+    pointer-events: none;
+    overflow: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease, max-height 0.2s ease, padding 0.2s ease;
+  }
+
+  .property-card:hover .card_buttons_actions,
+  .property-card:focus-within .card_buttons_actions {
+    opacity: 1;
+    visibility: visible;
+    max-height: 60px;
+    pointer-events: auto;
+  }
+
+  .buttons_actions {
+    min-width: 107px;
+    height: 40px;
+    padding: 5px 5px;
+    border: 1px solid var(--buttons-transparent-border-color);
+    border-radius: 5px;
+    background-color: var(--ads-background-color);
+    color: var(--buttons-transparent-text-color);
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .button_qrcode {
+    background-color: var(--buttons-solid-background-color);
+    color: var(--buttons-solid-text-color);
   }
 }
