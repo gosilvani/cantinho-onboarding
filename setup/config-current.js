@@ -4,6 +4,7 @@ const company = {
   dns: 'www.leoimoveis.cantinho.co',
   GTM: 'GTM-NMNWZRNJ',
   siteMode: 'sale',
+  creci: '',
   address: {
     street: 'Av. João Vieira da Costa',
     number: '970',
