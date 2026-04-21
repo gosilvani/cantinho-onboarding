@@ -49,61 +49,49 @@
           </fieldset>
           <fieldset>
             <label for="type">Imóvel</label>
-            <select name="type" id="type">
+            <select name="type" id="type" onchange="handlePropertyTypeChange()">
               <option value="" disabled selected hidden>Selecione</option>
-              <option value="Apartamento">Apartamento</option>
-              <option value="Casa">Casa</option>
-              <option value="Kitnet">Kitnet</option>
+              <optgroup label="Residencial">
+                <option value="Apartamento">Apartamento</option>
+                <option value="Casa">Casa</option>
+                <option value="Kitnet">Kitnet</option>
+                <option value="Lote">Lote</option>
+              </optgroup>
+              <optgroup label="Comercial">
+                <option value="Sala">Sala</option>
+                <option value="Loja">Loja</option>
+                <option value="Galpão">Galpão</option>
+              </optgroup>
+              <optgroup label="Rural">
+                <option value="Chácara">Chácara</option>
+                <option value="Sítio">Sítio</option>
+                <option value="Fazenda">Fazenda</option>
+              </optgroup>
             </select>
           </fieldset>
           <fieldset>
             <label for="rooms">Quartos</label>
-            <div class="radio-group">
-              <label class="radio-option">
-                <input type="radio" name="rooms" id="rooms" value="1" id="room-1" />
-                <span>1</span>
-              </label>
-              <label class="radio-option">
-                <input type="radio" name="rooms" value="2" id="room-2" />
-                <span>2</span>
-              </label>
-              <label class="radio-option">
-                <input type="radio" name="rooms" value="3" id="room-3" />
-                <span>3</span>
-              </label>
-              <label class="radio-option">
-                <input type="radio" name="rooms" value="4" id="room-4" />
-                <span>4+</span>
-              </label>
-            </div>
+            <select name="rooms" id="rooms">
+              <option value="" disabled selected hidden>Selecione</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">+4</option>
+            </select>
           </fieldset>
           <fieldset>
             <label for="garage_spaces">Garagens</label>
-            <div class="radio-group" id="garage_spaces_group">
-              <label class="radio-option">
-                <input type="radio" name="garage_spaces" id="garage_spaces" value="0" id="garage_space-0" />
-                <span>0</span>
-              </label>
-              <label class="radio-option">
-                <input type="radio" name="garage_spaces" value="1" id="garage_space-1" />
-                <span>1</span>
-              </label>
-              <label class="radio-option">
-                <input type="radio" name="garage_spaces" value="2" id="garage_space-2" />
-                <span>2</span>
-              </label>
-              <label class="radio-option">
-                <input type="radio" name="garage_spaces" value="3" id="garage_space-3" />
-                <span>3</span>
-              </label>
-              <label class="radio-option">
-                <input type="radio" name="garage_spaces" value="4" id="garage_space-4" />
-                <span>4+</span>
-              </label>
-            </div>
+            <select name="garage_spaces" id="garage_spaces">
+              <option value="" disabled selected hidden>Selecione</option>
+              <option value="0">Não tem</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">+4</option>
+            </select>
           </fieldset>
           <fieldset>
-            <label for="value">Valor do imóvel</label>
+            <label for="value">Valor de venda do imóvel</label>
             <input type="text" id="value" oninput="formatCurrency(this)">
           </fieldset>
         </div>

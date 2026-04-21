@@ -70,11 +70,24 @@
               {{iconHome}}
               <span>Imóvel</span>
             </label>
-            <select name="type_property" id="type_property">
+            <select name="type_property" id="type_property" onchange="handlePropertyTypeChange()">
               <option value="" disabled selected hidden>Selecione</option>
-              <option value="Apartamento">Apartamento</option>
-              <option value="Casa">Casa</option>
-              <option value="Kitnet">Kitnet</option>
+              <optgroup label="Residencial">
+                <option value="Apartamento">Apartamento</option>
+                <option value="Casa">Casa</option>
+                <option value="Kitnet">Kitnet</option>
+                <option value="Lote">Lote</option>
+              </optgroup>
+              <optgroup label="Comercial">
+                <option value="Sala">Sala</option>
+                <option value="Loja">Loja</option>
+                <option value="Galpão">Galpão</option>
+              </optgroup>
+              <optgroup label="Rural">
+                <option value="Chácara">Chácara</option>
+                <option value="Sítio">Sítio</option>
+                <option value="Fazenda">Fazenda</option>
+              </optgroup>
             </select>
           </fieldset>
           <fieldset id="camp_price_range_sale">

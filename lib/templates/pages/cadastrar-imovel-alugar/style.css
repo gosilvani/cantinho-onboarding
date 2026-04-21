@@ -58,6 +58,21 @@ a {
   text-decoration: none;
 }
 
+fieldset {
+  border: none;
+}
+
+label {
+  font-size: 16px;
+  color: var(--forms-label-color);
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 body>header {
   display: flex;
   justify-content: space-between;
@@ -143,8 +158,12 @@ main form header button {
   height: 40px;
 }
 
+#camp_description {
+  width: 100%;
+  max-width: 900px !important;
+}
+
 main form fieldset {
-  border: none;
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
@@ -170,40 +189,18 @@ main form fieldset select {
   cursor: pointer;
 }
 
-.radio-group {
-  margin-top: 5px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
-}
-
-.container fieldset:last-child .radio-group {
-  grid-template-columns: repeat(5, 1fr);
-}
-
-.radio-option {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 0.5rem 1rem;
+main form fieldset textarea {
+  width: 100%;
+  height: 150px;
+  padding: 10px;
   border-radius: 5px;
-  background-color: var(--forms-input-background-color);
-  cursor: pointer;
-  transition: background-color 0.3s;
+  border: none;
+  margin-top: 5px;
   font-size: 16px;
-}
-
-/* Esconde o input */
-.radio-option input[type="radio"] {
-  display: none;
-}
-
-/* Aplica a cor azul e letra branca no item inteiro selecionado */
-.radio-option:has(input[type="radio"]:checked) {
-  background-color: var(--forms-input-text-color);
-  color: var(--background-color);
-  font-weight: bold;
+  background-color: var(--forms-input-background-color);
+  color: var(--forms-input-text-color);
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
 }
 
 .image_field {
@@ -252,6 +249,7 @@ main form fieldset select {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: 50% 50%;
   z-index: 1;
   position: absolute;
   top: 0;
@@ -265,6 +263,106 @@ main form fieldset select {
   color: var(--buttons-remove-text-color);
   border-radius: 4px;
   font-size: 16px;
+  margin-top: 10px;
+}
+
+.image_adjust_dialog {
+  width: min(960px, calc(100vw - 30px));
+  max-width: 960px;
+  border: none;
+  border-radius: 6px;
+  padding: 0;
+  background-color: var(--background-color);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.image_adjust_dialog::backdrop {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.image_adjust_dialog_content {
+  padding: 15px 20px;
+}
+
+.image_adjust_dialog_content > header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.image_adjust_dialog_content > header h2 {
+  margin: 0;
+  color: var(--text-title-color);
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.image_adjust_dialog_close {
+  width: auto;
+  padding: 0 16px;
+  background-color: transparent;
+  color: var(--buttons-transparent-text-color);
+  font-size: 16px;
+}
+
+.image_adjust_dialog_previews {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.image_adjust_dialog_previews section h3 {
+  margin: 0 0 10px;
+  font-size: 16px;
+  color: var(--text-default-color);
+  font-weight: 400;
+}
+
+.image_adjust_dialog_frame {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 5px;
+  background-color: var(--forms-input-background-color);
+  position: relative;
+}
+
+.image_adjust_dialog_frame_mobile {
+  aspect-ratio: 16 / 9;
+  max-width: 380px;
+}
+
+.image_adjust_dialog_frame_desktop {
+  max-width: 500px;
+  aspect-ratio: 16 / 9;
+}
+
+.image_adjust_dialog_frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+  display: block;
+}
+
+.image_adjust_dialog_controls {
+  margin-top: 20px;
+}
+
+.image_adjust_dialog_controls fieldset {
+  margin-bottom: 15px;
+}
+
+.image_adjust_dialog_controls fieldset:last-child {
+  margin-bottom: 0;
+}
+
+.image_adjust_dialog_controls input[type="range"] {
+  width: 100%;
   margin-top: 10px;
 }
 
@@ -347,5 +445,10 @@ main form footer button.save {
 
   main form footer {
     max-width: 500px;
+  }
+
+  .image_adjust_dialog_previews {
+    grid-template-columns: minmax(280px, 380px) minmax(0, 1fr);
+    align-items: start;
   }
 }

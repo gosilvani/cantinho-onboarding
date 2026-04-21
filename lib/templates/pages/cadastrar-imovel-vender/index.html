@@ -72,12 +72,12 @@
           </fieldset>
           <fieldset>
             <label for="street">Rua</label>
-            <input type="text" id="street" required>
+            <input type="text" id="street" >
           </fieldset>
           <div class="item">
             <fieldset>
               <label for="number">Número</label>
-              <input type="text" id="number" required>
+              <input type="text" id="number" >
             </fieldset>
             <fieldset>
               <label for="complement">Complemento</label>
@@ -85,80 +85,92 @@
             </fieldset>
           </div>
           <fieldset>
-              <label for="type">Imóvel</label>
-              <select name="type" id="type">
-                <option value="" disabled selected hidden>Selecione</option>
+            <label for="type">Imóvel</label>
+            <select name="type" id="type" onchange="handlePropertyTypeChange()">
+              <option value="" disabled selected hidden>Selecione</option>
+              <optgroup label="Residencial">
                 <option value="Apartamento">Apartamento</option>
                 <option value="Casa">Casa</option>
                 <option value="Kitnet">Kitnet</option>
-              </select>
-            </fieldset>
+                <option value="Lote">Lote</option>
+              </optgroup>
+              <optgroup label="Comercial">
+                <option value="Sala">Sala</option>
+                <option value="Loja">Loja</option>
+                <option value="Galpão">Galpão</option>
+              </optgroup>
+              <optgroup label="Rural">
+                <option value="Chácara">Chácara</option>
+                <option value="Sítio">Sítio</option>
+                <option value="Fazenda">Fazenda</option>
+              </optgroup>
+            </select>
+          </fieldset>
           <fieldset>
             <label for="rooms">Quartos</label>
-            <div class="radio-group">
-              <label class="radio-option">
-                <input type="radio" name="rooms" id="rooms" value="1" id="room-1" />
-                <span>1</span>
-              </label>
-              <label class="radio-option">
-                <input type="radio" name="rooms" value="2" id="room-2" />
-                <span>2</span>
-              </label>
-              <label class="radio-option">
-                <input type="radio" name="rooms" value="3" id="room-3" />
-                <span>3</span>
-              </label>
-              <label class="radio-option">
-                <input type="radio" name="rooms" value="4" id="room-4" />
-                <span>4+</span>
-              </label>
-            </div>
+            <select name="rooms" id="rooms">
+              <option value="" disabled selected hidden>Selecione</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">+4</option>
+            </select>
           </fieldset>
           <fieldset>
             <label for="bathrooms">Banheiros</label>
-            <div class="radio-group">
-              <label class="radio-option">
-                <input type="radio" id="bathrooms" name="bathrooms" value="1" id="bathroom-1" />
-                <span>1</span>
-              </label>
-              <label class="radio-option">
-                <input type="radio" name="bathrooms" value="2" id="bathroom-2" />
-                <span>2</span>
-              </label>
-              <label class="radio-option">
-                <input type="radio" name="bathrooms" value="3" id="bathroom-3" />
-                <span>3</span>
-              </label>
-              <label class="radio-option">
-                <input type="radio" name="bathrooms" value="4" id="bathroom-4" />
-                <span>4+</span>
-              </label>
-            </div>
+            <select name="bathrooms" id="bathrooms">
+              <option value="" disabled selected hidden>Selecione</option>
+              <option value="0">Não tem</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">+4</option>
+            </select>
           </fieldset>
           <fieldset>
             <label for="garage_spaces">Garagens</label>
-            <div class="radio-group">
-              <label class="radio-option">
-                <input type="radio" name="garage_spaces" id="garage_spaces" value="0" id="garage_space-0" />
-                <span>0</span>
-              </label>
-              <label class="radio-option">
-                <input type="radio" name="garage_spaces" value="1" id="garage_space-1" />
-                <span>1</span>
-              </label>
-              <label class="radio-option">
-                <input type="radio" name="garage_spaces" value="2" id="garage_space-2" />
-                <span>2</span>
-              </label>
-              <label class="radio-option">
-                <input type="radio" name="garage_spaces" value="3" id="garage_space-3" />
-                <span>3</span>
-              </label>
-              <label class="radio-option">
-                <input type="radio" name="garage_spaces" value="4" id="garage_space-4" />
-                <span>4+</span>
-              </label>
-            </div>
+            <select name="garage_spaces" id="garage_spaces">
+              <option value="" disabled selected hidden>Selecione</option>
+              <option value="0">Não tem</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">+4</option>
+            </select>
+          </fieldset>
+        </div>
+      </div>
+      <div>
+        <header>
+          <h2>Informações adicionais</h2>
+        </header>
+        <div class="container">
+          <fieldset>
+            <label for="owner">Proprietário</label>
+            <input type="text" id="owner" >
+          </fieldset>
+          <fieldset id="camp_contact_owner">
+            <label for="owner">Contato</label>
+            <input type="text" id="contact" oninput="maskPhone(this)" >
+          </fieldset>
+          <div class="item">
+            <fieldset>
+              <label for="area">Área</label>
+              <input type="text" id="area" inputmode="decimal" oninput="maskArea(this)">
+            </fieldset>
+            <fieldset>
+              <label for="unity">Unidade de medida</label>
+              <select name="unity" id="unity">
+                <option value="" disabled selected hidden>Selecione</option>
+                <option value="m²">m²</option>
+                <option value="hectares">hectares</option>
+                <option value="alqueire">alqueire</option>
+              </select>
+            </fieldset>
+          </div>
+          <fieldset id="camp_description">
+            <label for="description">Descrição</label>
+            <textarea maxlength="1000" name="description" id="description" rows="5" ></textarea>
           </fieldset>
         </div>
       </div>
@@ -171,41 +183,33 @@
           <div class="image_field" data-field-id="1">
             <label class="image_box">
               <span class="placeholder">Enviar imagem</span>
-              <input type="file" accept="image/*" onchange="handleImageChange(event, 1)" />
+              <input type="file" accept="image/*" multiple onchange="handleImageSelection(event, 1)" />
               <img class="preview" />
             </label>
             <button type="button" onclick="removeImageField(1)">Remover imagem</button>
-          </div>
-          <div class="image_field" data-field-id="2">
-            <label class="image_box">
-              <span class="placeholder">Enviar imagem</span>
-              <input type="file" accept="image/*" onchange="handleImageChange(event, 2)" />
-              <img class="preview" />
-            </label>
-            <button type="button" onclick="removeImageField(2)">Remover imagem</button>
-          </div>
-          <div class="image_field" data-field-id="3">
-            <label class="image_box">
-              <span class="placeholder">Enviar imagem</span>
-              <input type="file" accept="image/*" onchange="handleImageChange(event, 3)" />
-              <img class="preview" />
-            </label>
-            <button type="button" onclick="removeImageField(3)">Remover imagem</button>
           </div>
         </div>
       </div>
       <div>
         <header>
-          <h2>Dados da venda</h2>
+          <h2>Informações de faturamento</h2>
         </header>
         <div class="container">
           <fieldset>
-            <label for="owner">Proprietário</label>
-            <input type="text" id="owner" required>
+            <label for="valueProperty">Valor do imóvel</label>
+            <input type="text" id="valueProperty" oninput="formatCurrency(this)">
           </fieldset>
           <fieldset>
-            <label for="sale">Valor</label>
-            <input type="text" id="sale" oninput="formatCurrency(this)">
+            <label for="salePrice">Valor de venda do imóvel</label>
+            <input type="text" id="salePrice" oninput="formatCurrency(this)">
+          </fieldset>
+          <fieldset>
+            <label for="showValueProperty">Exibir valor do imóvel</label>
+            <select id="showValueProperty">
+              <option value="" disabled selected hidden>Selecione</option>
+              <option value="true">Sim</option>
+              <option value="false">Não</option>
+            </select>
           </fieldset>
         </div>
       </div>
@@ -263,6 +267,43 @@
         </div>
       </footer>
     </form>
+
+    <dialog id="image_adjust_dialog" class="image_adjust_dialog">
+      <div class="image_adjust_dialog_content">
+        <header>
+          <h2>Ajustar imagem</h2>
+          <button type="button" class="image_adjust_dialog_close" onclick="closeImageAdjustDialog()">Fechar</button>
+        </header>
+
+        <div class="image_adjust_dialog_previews">
+          <section>
+            <h3>Celular</h3>
+            <div class="image_adjust_dialog_frame image_adjust_dialog_frame_mobile">
+              <img id="image_adjust_preview_mobile" alt="Prévia mobile da imagem" />
+            </div>
+          </section>
+
+          <section>
+            <h3>Computador</h3>
+            <div class="image_adjust_dialog_frame image_adjust_dialog_frame_desktop">
+              <img id="image_adjust_preview_desktop" alt="Prévia desktop da imagem" />
+            </div>
+          </section>
+        </div>
+
+        <div class="image_adjust_dialog_controls">
+          <fieldset>
+            <label for="image_adjust_x">Posição horizontal</label>
+            <input type="range" id="image_adjust_x" min="0" max="100" value="50" oninput="handleImageAdjustChange()">
+          </fieldset>
+
+          <fieldset>
+            <label for="image_adjust_y">Posição vertical</label>
+            <input type="range" id="image_adjust_y" min="0" max="100" value="50" oninput="handleImageAdjustChange()">
+          </fieldset>
+        </div>
+      </div>
+    </dialog>
   </main>
 </body>
 
