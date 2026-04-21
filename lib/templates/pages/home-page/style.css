@@ -132,7 +132,7 @@ main nav div {
 }
 
 main nav div button {
-  display: block;
+  display: none;
   align-items: center;
   justify-content: center;
 

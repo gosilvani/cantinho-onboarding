@@ -20,8 +20,130 @@ const company = {
   },
   citiesAndDistricts: [
     {
+      name: 'Alto Caparaó - MG',
+      districts: [
+        'Água Verde',
+        'Bela Vista',
+        'Campo Belo',
+        'Centro',
+        'Independência',
+        'Liberdade',
+        'Serra Monte',
+        'Val Paraíso',
+        'Vale das Hortências',
+        'Zona Rural'
+      ]
+    },
+    {
+      name: 'Alto Jequitibá - MG',
+      districts: [
+        'Bela Vista',
+        'Centro',
+        'Colina',
+        'Encosta do Sol',
+        'Guilherme Sathler',
+        'Loanda',
+        'Vila Leopoldina',
+        'Zona Rural'
+      ]
+    },
+    {
+      name: 'Caiana - MG',
+      districts: [
+        'Centro',
+        'Zona Rural'
+      ]
+    },
+    {
+      name: 'Caparaó - MG',
+      districts: [
+        'Centro',
+        'Zona Rural'
+      ]
+    },
+    {
+      name: 'Carangola - MG',
+      districts: [
+        'Aeroporto',
+        'Amendoeira',
+        "Caixa D'Água",
+        'Centro',
+        'Chevrand',
+        'Coroado',
+        'Eldorado',
+        'Floresta',
+        'Lacerdina',
+        'Novos Tempos',
+        'Ouro Verde',
+        'Panorama',
+        'Santa Emília',
+        'Santa Maria',
+        'Santo Onofre',
+        'Triângulo',
+        'Varginha',
+        'Zona Rural'
+      ]
+    },
+    {
+      name: 'Dores do Rio Preto - ES',
+      districts: [
+        'Centro',
+        'Cidade Alta',
+        'Zona Rural'
+      ]
+    },
+    {
       name: 'Espera Feliz - MG',
-      districts: ['centro', 'mineradora', 'retas', 'área de lazer', 'joão do roque', 'santa cecília', 'são francisco', 'patronato', 'waltair', 'santa luzia', 'floresta', 'joão clara', 'santa inês', 'novo horizonte', 'vale do sol']
+      districts: [
+        'Área de Lazer',
+        'Centro',
+        'Floresta',
+        'João Clara',
+        'João do Roque',
+        'Mineradora',
+        'Novo Horizonte',
+        'Patronato',
+        'Retas',
+        'Santa Cecília',
+        'Santa Inês',
+        'Santa Luzia',
+        'São Francisco',
+        'Vale do Sol 1',
+        'Vale do Sol 2',
+        'Waltair',
+        'Zona Rural'
+      ]
+    },
+    {
+      name: 'Guaçuí - ES',
+      districts: [
+        'Amnorte',
+        'Bela Vista',
+        'Centro',
+        'Edith Castro',
+        'Horto Florestal',
+        'João Ferras de Araújo',
+        'Lula Pires',
+        'Santa Cecília',
+        'São José',
+        'Zona Rural'
+      ]
+    },
+    {
+      name: 'Manhumirim - MG',
+      districts: [
+        'Bonfim',
+        'Centro',
+        'Cidade Jardim',
+        'Lessa',
+        'Nossa Senhora Aparecida',
+        'Nossa Senhora da Penha',
+        'Roque',
+        'Santa Rita',
+        'Santo Antônio',
+        'Seminário',
+        'Zona Rural'
+      ]
     }
   ],
 };
