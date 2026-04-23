@@ -165,6 +165,7 @@
           </label>
           <select name="rooms" id="rooms">
             <option value="" disabled selected hidden>Selecione</option>
+            <option value="0">Tanto faz</option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -219,6 +220,13 @@
         </button>
       </div>
     </form>
+
+    <dialog id="loading">
+      <div class="spinner">
+        {{iconLoading}}
+      </div>
+      <span>Carregando...</span>
+    </dialog>
   </main>
 </body>
 

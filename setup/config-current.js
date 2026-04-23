@@ -1,10 +1,10 @@
 const company = {
-  name: 'Léo Imóveis',
-  tenant: 'leo-imoveis-test',
-  dns: 'www.leoimoveis.cantinho.co',
-  GTM: 'GTM-NMNWZRNJ',
+  name: 'Michele Corretora',
+  tenant: 'michele-corretora',
+  dns: 'www.michelecorretora.cantinho.co',
+  GTM: 'GTM-PNMX8SBQ',
   siteMode: 'sale',
-  creci: '',
+  creci: '41.938',
   address: {
     street: 'Av. João Vieira da Costa',
     number: '970',
@@ -14,9 +14,9 @@ const company = {
     state: 'MG',
   },
   contact: {
-    email: 'elielfx@yahoo.com.br',
-    phone: '32984163506',
-    whatsapp: '32984163506'
+    email: 'mifrauches@hotmail.com',
+    phone: '32984081203',
+    whatsapp: '32984081203'
   },
   citiesAndDistricts: [
     {
@@ -149,8 +149,8 @@ const company = {
 };
 
 const user = {
-  name: 'Eliel Ferreira',
-  email: 'elielfx@yahoo.com.br',
+  name: 'Michele Frauches',
+  email: 'mifrauches@hotmail.com',
   password: '10203050',
   type: 'companyAdmin',
 };
@@ -161,31 +161,31 @@ const theme = {
   contents: {
     home: {
       heroImageFileName: 'hero-image.svg',
-      heroText: 'O seu melhor negócio está aqui',
-      metaDescription: 'Encontre as melhores oportunidades em imóveis com a Léo Imóveis. Compra e venda com atendimento confiável e as melhores opções da região.'
+      heroText: 'O seu melhor negócio está aqui.',
+      metaDescription: 'Encontre as melhores oportunidades em imóveis com a Michele Corretora. Compra e venda com atendimento confiável e as melhores opções da região.'
     },
     about: {
       heroImageFileName: 'hero-image.svg',
-      heroText: 'O seu melhor negócio está aqui. Na Léo Imóveis, trabalhamos para conectar você às melhores oportunidades do mercado, com atendimento próximo, transparência e compromisso em cada negociação. Nosso objetivo é tornar sua experiência simples, segura e eficiente.',
-      metaDescription: 'Conheça a Léo Imóveis e nossa dedicação em oferecer atendimento de qualidade, transparência e as melhores oportunidades para você comprar e vender.'
+      heroText: 'O seu melhor negócio está aqui. Na Michele Corretora, trabalhamos para conectar você às melhores oportunidades do mercado, com atendimento próximo, transparência e compromisso em cada negociação. Nosso objetivo é tornar sua experiência simples, segura e eficiente.',
+      metaDescription: 'Conheça a Michele Corretora e nossa dedicação em oferecer atendimento de qualidade, transparência e as melhores oportunidades para você comprar e vender.'
     },
     propertySale: {
-      metaDescription: 'Confira imóveis à venda com a Léo Imóveis em {{city}}. Casas, apartamentos e terrenos com ótimas oportunidades para você investir ou morar.'
+      metaDescription: 'Confira imóveis à venda com a Michele Corretora em {{city}}. Casas, apartamentos e terrenos com ótimas oportunidades para você investir ou morar.'
     },
     propertyRent: {
-      metaDescription: 'Encontre imóveis para alugar com a Léo Imóveis em {{city}}. Opções ideais para morar com praticidade, segurança e excelente custo-benefício.'
+      metaDescription: 'Encontre imóveis para alugar com a Michele Corretora em {{city}}. Opções ideais para morar com praticidade, segurança e excelente custo-benefício.'
     }
   },
   colors: {
-    line: '#D9CE0F',
-    background: '#E6E6E6',
+    line: '#D4AD68',
+    background: '#F4F4F4',
     buttons: {
       transparent: {
-        text: '#201E1E',
-        border: '#201E1E'
+        text: '#D4AD68',
+        border: '#D4AD68'
       },
       solid: {
-        background: '#D9CE0F',
+        background: '#D4AD68',
         text: '#201E1E'
       },
       remove: {
@@ -196,7 +196,7 @@ const theme = {
     text: {
       title: '#201E1E',
       default: '#201E1E',
-      highlight: '#D9CE0F'
+      highlight: '#D4AD68'
     },
     forms: {
       label: '#201E1E',

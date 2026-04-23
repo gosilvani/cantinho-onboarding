@@ -73,6 +73,7 @@
             <label for="rooms">Quartos</label>
             <select name="rooms" id="rooms">
               <option value="" disabled selected hidden>Selecione</option>
+              <option value="0">Não tem</option>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -143,6 +144,13 @@
         <button type="button" onclick="notifyClients()">Enviar notificação</button>
       </form>
     </section>
+
+    <dialog id="loading">
+      <div class="spinner">
+        {{iconLoading}}
+      </div>
+      <span>Carregando...</span>
+    </dialog>
   </main>
 </body>
 

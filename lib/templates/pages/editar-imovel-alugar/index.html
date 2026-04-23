@@ -71,7 +71,7 @@
             </select>
           </fieldset>
           <fieldset>
-            <label for="street">Rua</label>
+            <label for="street">Rua / Av. / Local</label>
             <input type="text" name="street" id="street" >
           </fieldset>
           <div class="item">
@@ -256,6 +256,13 @@
           </fieldset>
         </div>
       </div>
+    </dialog>
+
+    <dialog id="loading">
+      <div class="spinner">
+        {{iconLoading}}
+      </div>
+      <span>Carregando...</span>
     </dialog>
   </main>
 </body>

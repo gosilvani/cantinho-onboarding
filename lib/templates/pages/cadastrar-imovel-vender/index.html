@@ -71,7 +71,7 @@
             </select>
           </fieldset>
           <fieldset>
-            <label for="street">Rua</label>
+            <label for="street">Rua / Av. / Local</label>
             <input type="text" id="street" >
           </fieldset>
           <div class="item">
@@ -110,6 +110,7 @@
             <label for="rooms">Quartos</label>
             <select name="rooms" id="rooms">
               <option value="" disabled selected hidden>Selecione</option>
+              <option value="0">Não tem</option>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -303,6 +304,13 @@
           </fieldset>
         </div>
       </div>
+    </dialog>
+
+    <dialog id="loading">
+      <div class="spinner">
+        {{iconLoading}}
+      </div>
+      <span>Carregando...</span>
     </dialog>
   </main>
 </body>
