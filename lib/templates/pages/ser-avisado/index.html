@@ -94,18 +94,11 @@
               <span>Bairro</span>
             </div>
             <div>
-              <div>
-                <input type="radio" id="district_mode" name="district_mode" value="select" checked>
-                <label for="select">Quero</label>
-              </div>
-              <div>
-                <input type="radio" id="district_mode" name="district_mode" value="excluded">
-                <label for="excluded">Evitar</label>
-              </div>
+              <button type="button" class="districts-toggle" id="districts_toggle" hidden>selecionar todos</button>
             </div>
           </label>
           <div class="custom-select" name="districts" id="districts">
-            <button type="button" class="select-trigger" id="districts_select" onclick="onDistrict()">Selecione</button>
+            <button type="button" class="select-trigger" id="districts_select">Selecione</button>
             <div class="options" id="options_districts">
             </div>
           </div>
