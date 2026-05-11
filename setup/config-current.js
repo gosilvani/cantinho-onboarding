@@ -1,97 +1,23 @@
 const company = {
-  name: 'Michele Corretora',
-  tenant: 'michele-corretora',
-  dns: 'www.michelecorretora.cantinho.co',
-  GTM: 'GTM-PNMX8SBQ',
-  siteMode: 'sale',
-  creci: '41.938',
+  name: 'Cantinho',
+  tenant: 'cantinho',
+  dns: 'www.cantinho.co',
+  GTM: 'GTM-5V53PR5N',
+  siteMode: 'both',
   address: {
-    street: 'Av. João Vieira da Costa',
-    number: '970',
-    complement: 'Loja 1',
-    district: 'Centro',
+    street: 'Rua Caiana',
+    number: '491',
+    complement: 'Ap 102',
+    district: 'Área de Lazer',
     city: 'Espera Feliz',
     state: 'MG',
   },
   contact: {
-    email: 'mifrauches@hotmail.com',
-    phone: '32984081203',
-    whatsapp: '32984081203'
+    email: 'go.silvani@gmail.com',
+    phone: '32984835145',
+    whatsapp: '32984835145'
   },
   citiesAndDistricts: [
-    {
-      name: 'Alto Caparaó - MG',
-      districts: [
-        'Água Verde',
-        'Bela Vista',
-        'Campo Belo',
-        'Centro',
-        'Independência',
-        'Liberdade',
-        'Serra Monte',
-        'Val Paraíso',
-        'Vale das Hortências',
-        'Zona Rural'
-      ]
-    },
-    {
-      name: 'Alto Jequitibá - MG',
-      districts: [
-        'Bela Vista',
-        'Centro',
-        'Colina',
-        'Encosta do Sol',
-        'Guilherme Sathler',
-        'Loanda',
-        'Vila Leopoldina',
-        'Zona Rural'
-      ]
-    },
-    {
-      name: 'Caiana - MG',
-      districts: [
-        'Centro',
-        'Zona Rural'
-      ]
-    },
-    {
-      name: 'Caparaó - MG',
-      districts: [
-        'Centro',
-        'Zona Rural'
-      ]
-    },
-    {
-      name: 'Carangola - MG',
-      districts: [
-        'Aeroporto',
-        'Amendoeira',
-        "Caixa D'Água",
-        'Centro',
-        'Chevrand',
-        'Coroado',
-        'Eldorado',
-        'Floresta',
-        'Lacerdina',
-        'Novos Tempos',
-        'Ouro Verde',
-        'Panorama',
-        'Santa Emília',
-        'Santa Maria',
-        'Santo Onofre',
-        'Triângulo',
-        'Varginha',
-        'Zona Rural'
-      ]
-    },
-    {
-      name: 'Dores do Rio Preto - ES',
-      districts: [
-        'Centro',
-        'Cidade Alta',
-        'Zona Rural'
-      ]
-    },
     {
       name: 'Espera Feliz - MG',
       districts: [
@@ -113,44 +39,13 @@ const company = {
         'Waltair',
         'Zona Rural'
       ]
-    },
-    {
-      name: 'Guaçuí - ES',
-      districts: [
-        'Amnorte',
-        'Bela Vista',
-        'Centro',
-        'Edith Castro',
-        'Horto Florestal',
-        'João Ferras de Araújo',
-        'Lula Pires',
-        'Santa Cecília',
-        'São José',
-        'Zona Rural'
-      ]
-    },
-    {
-      name: 'Manhumirim - MG',
-      districts: [
-        'Bonfim',
-        'Centro',
-        'Cidade Jardim',
-        'Lessa',
-        'Nossa Senhora Aparecida',
-        'Nossa Senhora da Penha',
-        'Roque',
-        'Santa Rita',
-        'Santo Antônio',
-        'Seminário',
-        'Zona Rural'
-      ]
     }
   ],
 };
 
 const user = {
-  name: 'Michele Frauches',
-  email: 'mifrauches@hotmail.com',
+  name: 'Silvani Gonçalves',
+  email: 'go.silvani@gmail.com',
   password: '10203050',
   type: 'companyAdmin',
 };
@@ -161,32 +56,32 @@ const theme = {
   contents: {
     home: {
       heroImageFileName: 'hero-image.svg',
-      heroText: 'O seu melhor negócio está aqui.',
-      metaDescription: 'Encontre as melhores oportunidades em imóveis com a Michele Corretora. Compra e venda com atendimento confiável e as melhores opções da região.'
+      heroText: 'Estamos aqui para ajudar você a encontrar o seu canto.',
+      metaDescription: 'Encontre os melhores imóveis no cantinho.co'
     },
     about: {
       heroImageFileName: 'hero-image.svg',
-      heroText: 'O seu melhor negócio está aqui. Na Michele Corretora, trabalhamos para conectar você às melhores oportunidades do mercado, com atendimento próximo, transparência e compromisso em cada negociação. Nosso objetivo é tornar sua experiência simples, segura e eficiente.',
-      metaDescription: 'Conheça a Michele Corretora e nossa dedicação em oferecer atendimento de qualidade, transparência e as melhores oportunidades para você comprar e vender.'
+      heroText: 'O Cantinho é uma plataforma criada para ajudar corretores e imobiliárias a divulgar imóveis, organizar atendimentos e conectar imóveis com pessoas que realmente estão procurando por eles. Além do portal da cidade, cada parceiro também possui um site personalizado exclusivo para os seus imóveis, com ferramentas de cadastro e notificação automática de clientes interessados.',
+      metaDescription: 'Saiba mais sobre o cantinho.'
     },
     propertySale: {
-      metaDescription: 'Confira imóveis à venda com a Michele Corretora em {{city}}. Casas, apartamentos e terrenos com ótimas oportunidades para você investir ou morar.'
+      metaDescription: 'Confira imóveis à venda em {{city}}. Casas, apartamentos e terrenos com ótimas oportunidades para você investir ou morar.'
     },
     propertyRent: {
-      metaDescription: 'Encontre imóveis para alugar com a Michele Corretora em {{city}}. Opções ideais para morar com praticidade, segurança e excelente custo-benefício.'
+      metaDescription: 'Encontre imóveis para alugar em {{city}}. Opções ideais para morar com praticidade, segurança e excelente custo-benefício.'
     }
   },
   colors: {
-    line: '#D4AD68',
+    line: '#D0A616',
     background: '#F4F4F4',
     buttons: {
       transparent: {
-        text: '#D4AD68',
-        border: '#D4AD68'
+        text: '#D0A616',
+        border: '#D0A616'
       },
       solid: {
-        background: '#D4AD68',
-        text: '#201E1E'
+        background: '#D0A616',
+        text: '#2C345C'
       },
       remove: {
         background: '#B21313',
@@ -194,15 +89,15 @@ const theme = {
       }
     },
     text: {
-      title: '#201E1E',
-      default: '#201E1E',
-      highlight: '#D4AD68'
+      title: '#2C345C',
+      default: '#2C345C',
+      highlight: '#D0A616'
     },
     forms: {
-      label: '#201E1E',
+      label: '#2C345C',
       input: {
         background: '#D5DADE',
-        text: '#201E1E'
+        text: '#2C345C'
       }
     },
     ads: {
