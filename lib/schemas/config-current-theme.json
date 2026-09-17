@@ -209,6 +209,11 @@
               "type": "string",
               "minLength": 4,
               "maxLength": 9
+            },
+            "hero": {
+              "type": "string",
+              "minLength": 4,
+              "maxLength": 9
             }
           }
         },
