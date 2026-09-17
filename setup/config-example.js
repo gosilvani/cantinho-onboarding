@@ -82,7 +82,8 @@ const theme = {
     text: {
       title: '',
       default: '',
-      highlight: ''
+      highlight: '',
+      hero: ''
     },
     forms: {
       label: '',

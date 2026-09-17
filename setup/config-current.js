@@ -93,7 +93,8 @@ const theme = {
     text: {
       title: '#2C345C',
       default: '#2C345C',
-      highlight: '#D0A616'
+      highlight: '#D0A616',
+      hero: '#D0A616'
     },
     forms: {
       label: '#2C345C',
