@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /administrativo/
+Disallow: /login/
+
+Sitemap: https://{{dns}}/sitemap.xml

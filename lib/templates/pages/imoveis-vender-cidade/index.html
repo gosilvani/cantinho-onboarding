@@ -4,10 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{name}} | Imóveis à venda em {{city}}</title>
+  <title>{{name}} | {{propertyType}} à venda em {{city}}</title>
   <meta name="description" content="{{metaDescription}}">
+  <link rel="canonical" href="https://{{dns}}/imoveis/venda/{{citySlug}}/{{propertyTypeSlug}}/index.html">
   <link rel="icon" type="image/x-icon" href="/{{faviconFileName}}">
-  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../../style.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
   <script>
     (function (w, d, s, l, i) {
@@ -19,13 +20,12 @@
           'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
     })(window, document, 'script', 'dataLayer', '{{gtm}}');
   </script>
-  <script src="main.js" defer></script>
+  <script src="../main.js" defer></script>
 </head>
 
-<body>
+<body data-property-type="{{propertyType}}">
   <noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id={{gtm}}" height="0" width="0"
-      style="display:none;visibility:hidden"></iframe>
+    <iframe src="https://www.googletagmanager.com/ns.html?id={{gtm}}" height="0" width="0" style="display:none;visibility:hidden"></iframe>
   </noscript>
   <header>
     <a href="/index.html">
@@ -36,148 +36,169 @@
       <a href="/sobre/index.html">Sobre</a>
     </nav>
   </header>
-  <main>
-    <aside id="search" class="search">
-      <h1>Encontre o imóvel ideal para você</h1>
-      <p>Preencha os dados abaixo para buscar o seu cantinho em {{city}}</p>
-      <form>
-        <div class="content">
-          <fieldset class="multi-select">
-            <label id="label_districts">
-              <div>
-                {{iconSearch}}
-                <span>Bairro</span>
-              </div>
-              <div>
-                 <button type="button" class="districts-toggle" id="districts_toggle">Remover seleção</button>
-              </div>
-            </label>
-            <div class="custom-select" name="districts" id="districts">
-              <button type="button" class="select-trigger" id="districts_select">Selecione</button>
-              <div class="options" id="options_districts">
-              </div>
-            </div>
-          </fieldset>
-          <fieldset>
-            <label for="type_property">
-              {{iconHome}}
-              <span>Imóvel</span>
-            </label>
-            <select name="type_property" id="type_property" onchange="handlePropertyTypeChange()">
-              <option value="" disabled selected hidden>Selecione</option>
-              <optgroup label="Residencial">
-                <option value="Apartamento">Apartamento</option>
-                <option value="Casa">Casa</option>
-                <option value="Kitnet">Kitnet</option>
-                <option value="Lote">Lote</option>
-              </optgroup>
-              <optgroup label="Comercial">
-                <option value="Sala">Sala</option>
-                <option value="Loja">Loja</option>
-                <option value="Galpão">Galpão</option>
-              </optgroup>
-              <optgroup label="Rural">
-                <option value="Chácara">Chácara</option>
-                <option value="Sítio">Sítio</option>
-                <option value="Fazenda">Fazenda</option>
-              </optgroup>
-            </select>
-          </fieldset>
-          <fieldset id="camp_price_range_sale">
-            <label for="price_range">
-              {{iconDollar}}
-              <span>Valor do imóvel</span>
-            </label>
-            <select name="price_range" id="price_range">
-              <option value="" disabled selected hidden>Selecione</option>
-              <option value="150000">Até R$ 150.000,000</option>
-              <option value="250000">Até R$ 250.000,000</option>
-              <option value="400000">Até R$ 400.000,000</option>
-              <option value="600000">Até R$ 600.000,000</option>
-              <option value="1000000">Até R$ 1.000.000,000</option>
-              <option value="999999999">+ R$ 1.000.000,000</option>
-            </select>
-          </fieldset>
-          <fieldset>
-            <label for="rooms">
-              {{iconDetail}}
-              <span>Quartos</span>
-            </label>
-            <select name="rooms" id="rooms">
-              <option value="" disabled selected hidden>Selecione</option>
-              <option value="0">Tanto faz</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4+</option>
-            </select>
-          </fieldset>
-          <fieldset>
-            <label for="garage_spaces">
-              {{iconDetail}}
-              <span>Garagens</span>
-            </label>
-            <select name="garage_spaces" id="garage_spaces">
-              <option value="" disabled selected hidden>Selecione</option>
-              <option value="0">Tanto faz</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4+</option>
-            </select>
-          </fieldset>
-        </div>
-        <div class="actions">
-          <button type="button" id="search_apply" onclick="searchProperties()">Buscar imóveis</button>
-        </div>
-      </form>
-    </aside>
 
-    <section id="search_result" class="search_result hidden">
-      <header>
+  <main>
+    <aside class="search_inputs">
+      <div class="content">
         <fieldset>
-          <label for="city">
+          <label for="select_city">
             {{iconMap}}
             <span>Cidade</span>
           </label>
           <select name="city" id="select_city" onchange="handleCityChange(this)">
           </select>
         </fieldset>
-        <div>
-          <h1>Resultados da sua busca</h1>
-          <button type="button" onclick="renewSearch()">Ajustar busca</button>
-        </div>
-      </header>
-      <div id="item_result" class="property_list">
+        <fieldset>
+          <label for="type_property">
+            {{iconHome}}
+            <span>Imóvel</span>
+          </label>
+          <select name="type_property" id="type_property" onchange="handlePropertyTypeSearchChange(this)">
+            <option value="" disabled selected hidden>Selecione</option>
+            <optgroup label="Residencial">
+              <option value="Apartamento">Apartamento</option>
+              <option value="Casa">Casa</option>
+              <option value="Kitnet">Kitnet</option>
+              <option value="Lote">Lote</option>
+            </optgroup>
+            <optgroup label="Comercial">
+              <option value="Sala">Sala</option>
+              <option value="Loja">Loja</option>
+              <option value="Galpão">Galpão</option>
+            </optgroup>
+            <optgroup label="Rural">
+              <option value="Chácara">Chácara</option>
+              <option value="Sítio">Sítio</option>
+              <option value="Fazenda">Fazenda</option>
+            </optgroup>
+          </select>
+        </fieldset>
       </div>
+      <button type="button" id="button_open_filter" onclick="openFiltersDialog()">Mais filtros</button>
+      <button type="button" id="button_clean_filter" class="hidden" onclick="cleanFilters()">Limpar filtros</button>
+    </aside>
+
+    <section class="search_result" id="search_result">
+      <header>
+        <h1>{{propertyType}} à venda <br> em {{city}}</h1>
+        <button type="button" onclick="openRegisterDemandDialog()">Quero ser avisado</button>
+      </header>
+      <div class="property_list" id="item"></div>
+      <div class="property_filter" id="item_result"></div>
     </section>
 
     <dialog id="property_detail" class="property_popup">
       <div id="property_content" class="property_content"></div>
     </dialog>
 
+    <dialog id="filters_dialog">
+      <div id="filters_dialog_content">
+        <header>
+          <h2>Mais filtros</h2>
+          <button type="button" id="close_filters_dialog" onclick="closeDialog('filters_dialog')">
+            {{iconXSquare}}
+          </button>
+        </header>
+        <fieldset class="multi-select">
+          <label id="label_districts">
+            <div>
+              {{iconSearch}}
+              <span>Bairro</span>
+            </div>
+            <div>
+              <button type="button" class="districts-toggle" id="districts_toggle">Remover seleção</button>
+            </div>
+          </label>
+          <div class="custom-select" name="districts" id="districts">
+            <button type="button" class="select-trigger" id="districts_select">Selecione</button>
+            <div class="options" id="options_districts">
+            </div>
+          </div>
+        </fieldset>
+        <fieldset>
+          <label for="price_range">
+            {{iconDollar}}
+            <span>Valor do imóvel</span>
+          </label>
+          <select name="price_range" id="price_range">
+            <option value="" disabled selected hidden>Selecione</option>
+            <option value="150000">Até R$ 150.000,00</option>
+            <option value="250000">Até R$ 250.000,00</option>
+            <option value="400000">Até R$ 400.000,00</option>
+            <option value="600000">Até R$ 600.000,00</option>
+            <option value="1000000">Até R$ 1.000.000,00</option>
+            <option value="999999999">+ R$ 1.000.000,00</option>
+          </select>
+        </fieldset>
+        <fieldset>
+          <label for="rooms">
+            {{iconDetail}}
+            <span>Quartos</span>
+          </label>
+          <select name="rooms" id="rooms">
+            <option value="" disabled selected hidden>Selecione</option>
+            <option value="0">Tanto faz</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4+</option>
+          </select>
+        </fieldset>
+        <fieldset>
+          <label for="garage_spaces">
+            {{iconDetail}}
+            <span>Garagens</span>
+          </label>
+          <select name="garage_spaces" id="garage_spaces">
+            <option value="" disabled selected hidden>Selecione</option>
+            <option value="0">Tanto faz</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4+</option>
+          </select>
+        </fieldset>
+        <button type="button" id="button_apply_filters" onclick="applyFilters()">Buscar imóveis</button>
+      </div>
+    </dialog>
+
     <dialog class="register_demand" id="register_demand_search_empty">
       <div>
         <h2>Não encontramos imóveis com seus critérios</h2>
-        <p>Deixe seu nome e WhatsApp para ser avisado quando surgir um imóvel que combine com o que você está procurando.</p>
+        <p>Deixe seus dados e avisaremos quando surgir um imóvel que combine com você.</p>
       </div>
       <form>
         <fieldset>
-          <label for="name_search_empty">
+          <label for="name_demand_search_empty">
             {{iconDetail}}
             <span>Nome</span>
           </label>
-          <input type="text" id="name_search_empty" name="name_search_empty" placeholder="Ex: Maria" required>
+          <input type="text" id="name_demand_search_empty" name="name_demand_search_empty" required>
         </fieldset>
         <fieldset>
-          <label for="whatsapp_search_empty">
+          <label for="whatsapp_demand_search_empty">
             {{iconWhatsapp}}
             <span>WhatsApp</span>
           </label>
-          <input type="tel" id="whatsapp_search_empty" name="whatsapp_search_empty" required pattern="\d{10,11}" oninput="maskPhone(this)">
+          <input type="tel" id="whatsapp_demand_search_empty" name="whatsapp_demand_search_empty" required pattern="\d{10,11}" oninput="maskPhone(this)">
+        </fieldset>
+        <fieldset>
+          <label for="price_range_demand_search_empty">
+            {{iconDollar}}
+            <span>Valor do imóvel</span>
+          </label>
+          <select id="price_range_demand_search_empty">
+            <option value="" disabled selected hidden>Selecione</option>
+            <option value="150000">Até R$ 150.000,00</option>
+            <option value="250000">Até R$ 250.000,00</option>
+            <option value="400000">Até R$ 400.000,00</option>
+            <option value="600000">Até R$ 600.000,00</option>
+            <option value="1000000">Até R$ 1.000.000,00</option>
+            <option value="999999999">+ R$ 1.000.000,00</option>
+          </select>
         </fieldset>
         <div class="actions">
-          <button type="button" class="save" onclick="processRegistDemand('search_empty')">Quero ser avisado</button>
+          <button type="button" class="save" onclick="processRegistDemand('demand_search_empty')">Quero ser avisado</button>
           <button type="button" class="close" onclick="closeDialog('register_demand_search_empty')">
             {{iconArrowLeft}}
             <span>Sair</span>
@@ -186,29 +207,44 @@
       </form>
     </dialog>
 
-    <dialog class="register_demand" id="register_demand_search_not_empty">
+    <dialog class="register_demand" id="register_demand_all">
       <div>
-        <h2>Não gostou dos imóveis?</h2>
-        <p>Deixe seu nome e WhatsApp para ser avisado quando surgirem novos imóveis que combine com o que você está procurando.</p>
+        <h2>Quer ser avisado?</h2>
+        <p>Deixe seus dados e avisaremos quando surgir novos imóveis que combine com você.</p>
       </div>
       <form>
         <fieldset>
-          <label for="name_search_not_empty">
+          <label for="name_demand_all">
             {{iconDetail}}
             <span>Nome</span>
           </label>
-          <input type="text" id="name_search_not_empty" name="name_search_not_empty" placeholder="Ex: Maria" required>
+          <input type="text" id="name_demand_all" name="name_demand_all" required>
         </fieldset>
         <fieldset>
-          <label for="whatsapp_search_not_empty">
+          <label for="whatsapp_demand_all">
             {{iconWhatsapp}}
             <span>WhatsApp</span>
           </label>
-          <input type="tel" id="whatsapp_search_not_empty" name="whatsapp_search_not_empty" required pattern="\d{10,11}" oninput="maskPhone(this)">
+          <input type="tel" id="whatsapp_demand_all" name="whatsapp_demand_all" required pattern="\d{10,11}" oninput="maskPhone(this)">
+        </fieldset>
+        <fieldset>
+          <label for="price_range_demand_all">
+            {{iconDollar}}
+            <span>Valor do imóvel</span>
+          </label>
+          <select id="price_range_demand_all">
+            <option value="" disabled selected hidden>Selecione</option>
+            <option value="150000">Até R$ 150.000,00</option>
+            <option value="250000">Até R$ 250.000,00</option>
+            <option value="400000">Até R$ 400.000,00</option>
+            <option value="600000">Até R$ 600.000,00</option>
+            <option value="1000000">Até R$ 1.000.000,00</option>
+            <option value="999999999">+ R$ 1.000.000,00</option>
+          </select>
         </fieldset>
         <div class="actions">
-          <button type="button" class="save" onclick="processRegistDemand('search_not_empty')">Quero ser avisado</button>
-          <button type="button" class="close" onclick="closeDialog('register_demand_search_not_empty')">
+          <button type="button" class="save" onclick="processRegistDemand('demand_all')">Quero ser avisado</button>
+          <button type="button" class="close" onclick="closeDialog('register_demand_all')">
             {{iconArrowLeft}}
             <span>Sair</span>
           </button>
@@ -222,19 +258,19 @@
       </div>
       <span>Carregando...</span>
     </dialog>
-  </main>
 
-  <dialog id="contact_dialog" class="contact_dialog">
-    <div class="contact_dialog_content">
-      <header>
-        <div>
-          <h2>Fale conosco</h2>
-        </div>
-        <button type="button" id="close_contact_dialog" onclick="document.getElementById('contact_dialog').close()">Fechar</button>
-      </header>
-      <div id="contact_dialog_list"></div>
-    </div>
-  </dialog>
+    <dialog id="contact_dialog" class="contact_dialog">
+      <div class="contact_dialog_content">
+        <header>
+          <div>
+            <h2>Fale conosco</h2>
+          </div>
+          <button type="button" id="close_contact_dialog" onclick="document.getElementById('contact_dialog').close()">Fechar</button>
+        </header>
+        <div id="contact_dialog_list"></div>
+      </div>
+    </dialog>
+  </main>
 </body>
 
 </html>
