@@ -1,7 +1,7 @@
 const company = {
-  name: 'Teste Cantinho',
-  tenant: 'cantinho-teste',
-  dns: 'www.cantinho.co',
+  name: 'Validate Both',
+  tenant: 'validate-both',
+  dns: 'www.both.cantinho.co',
   siteMode: 'both',
   gtm: 'GTM-XXXXXXXX',
   address: {
@@ -17,6 +17,24 @@ const company = {
       number: '32984835145',
       hasWhatsapp: true,
       context: 'both'
+    },
+    {
+      label: 'Atendimento - Vendas',
+      number: '32985084774',
+      hasWhatsapp: true,
+      context: 'sale'
+    },
+    {
+      label: 'Atendimento - Aluguel',
+      number: '32984128641',
+      hasWhatsapp: true,
+      context: 'rent'
+    },
+    {
+      label: 'Assistência',
+      number: '3237461615',
+      hasWhatsapp: false,
+      context: 'general'
     }
   ],
   citiesAndDistricts: [
@@ -39,6 +57,22 @@ const company = {
         "Vale do Sol 1",
         "Vale do Sol 2",
         "Waltair",
+        "Zona Rural"
+      ]
+    },
+    {
+      "name": "Carangola",
+      "districts": [
+        "Coroado",
+        "Centro",
+        "Zona Rural"
+      ]
+    },
+    {
+      "name": "Manhuaçu",
+      "districts": [
+        "Vila Nova",
+        "Centro",
         "Zona Rural"
       ]
     }
@@ -67,10 +101,10 @@ const theme = {
       metaDescription: 'Conheça o Cantinho, um marketplace imobiliário que conecta você a imóveis, corretores e imobiliárias da sua cidade.'
     },
     propertySale: {
-      metaDescription: 'Encontre imóveis à venda em {{city}}. Casas, apartamentos, terrenos e oportunidades anunciadas por corretores e imobiliárias locais.'
+      metaDescription: 'Encontre {{propertyType}} à venda em {{city}}.'
     },
     propertyRent: {
-      metaDescription: 'Encontre imóveis para alugar em {{city}}. Casas, apartamentos e oportunidades anunciadas por corretores e imobiliárias locais.'
+      metaDescription: 'Encontre {{propertyType}} para alugar em {{city}}.'
     }
   },
   colors: {
