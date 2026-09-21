@@ -1,8 +1,8 @@
 const company = {
-  name: 'Validate Both',
-  tenant: 'validate-both',
-  dns: 'www.both.cantinho.co',
-  siteMode: 'both',
+  name: 'Validate Rent',
+  tenant: 'validate-rent',
+  dns: 'www.rent.cantinho.co',
+  siteMode: 'rent',
   gtm: 'GTM-XXXXXXXX',
   address: {
     street: 'Demonstração',
