@@ -195,23 +195,7 @@ main {
 }
 
 .hidden {
-  display: none;
-}
-
-.search {
-  flex: 1;
-  max-width: 900px
-}
-
-.search h1 {
-  font-size: 24px;
-  color: var(--text-title-color);
-  margin: 0 0 30px 0px;
-}
-
-.search p {
-  font-size: 16px;
-  margin: 0 0 10px 0;
+  display: none !important;
 }
 
 main fieldset {
@@ -270,45 +254,18 @@ main fieldset select {
   color: var(--buttons-transparent-text-color);
   font-size: 14px;
   font-weight: 500;
-  
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.search .actions button {
-  width: 100%;
-  height: 40px;
-  background-color: var(--buttons-solid-background-color);
-  margin-top: 30px;
-  border-radius: 5px;
-  color: var(--buttons-solid-text-color);
-  font-weight: 600;
-  font-size: 16px;
-  border: none;
 
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.search_result {
-  flex: 1;
-}
-
-.search_result > header fieldset {
+.search_inputs>fieldset {
   margin-top: 15px;
 }
 
-.search_result > header div h1 {
-  font-size: 18px;
-  font-weight: 500;
-  color: var(--text-title-color);
-  margin: 15px 0 0;
-}
-
-.search_result > header div button {
-  width: 100%;
+.search_inputs>button {
+  width: auto;
   height: 40px;
   background-color: transparent;
   margin-top: 10px;
@@ -316,20 +273,47 @@ main fieldset select {
   font-weight: 500;
   font-size: 16px;
   display: flex;
-  padding: 0;
+  padding: 20px;
+  padding-left: 0;
 
   display: flex;
   align-items: center;
 }
 
-.property_list {
+.search_result>header {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.search_result>header h1 {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text-title-color);
+}
+
+.search_result>header button {
+  width: auto;
+  min-width: 150px;
+  height: 40px;
+  background-color: transparent;
+  color: var(--buttons-transparent-text-color);
+  font-weight: 500;
+  font-size: 16px;
+  text-align: left;
+}
+
+.property_list, .property_filter {
   margin-top: 15px;
   display: flex;
   flex-direction: column;
   flex: 1;
 }
 
-.property_list .ad {
+.property_list .ad, .property_filter .ad {
   margin-bottom: 10px;
   display: flex;
   flex-direction: column;
@@ -472,7 +456,7 @@ dialog::backdrop {
   min-height: 100%;
 }
 
-.property_popup .property_content  #type_property {
+.property_popup .property_content #type_property {
   display: flex;
   align-items: center;
   margin-top: 25px;
@@ -656,6 +640,29 @@ dialog::backdrop {
   margin-right: 7px;
 }
 
+#creci h3 {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text-title-color);
+  margin: 25px 0 5px;
+}
+
+#creci>div {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  color: var(--text-title-color);
+  gap: 12px;
+}
+
+#creci>div span {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+#creci>div p {
+  margin: 0;
+}
+
 .register_demand {
   background-color: var(--background-color);
   border-radius: 5px;
@@ -829,33 +836,57 @@ dialog::backdrop {
   color: var(--text-default-color);
 }
 
-#creci h3 {
-  font-size: 18px;
-  font-weight: 500;
-  color: var(--text-title-color);
-  margin: 25px 0 5px;
-}
-
-#creci > div {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  color: var(--text-title-color);
-  gap: 12px;
-}
-
-#creci > div span {
-  font-size: 16px;
-  font-weight: 500;
-}
-
-#creci > div p {
+#filters_dialog {
+  width: 100%;
+  max-width: none;
+  height: 100vh;
+  max-height: none;
   margin: 0;
+  padding: 0;
+  border: 0;
+  background: var(--background-color);
+}
+
+#filters_dialog::backdrop {
+  background: rgba(44, 52, 92, 0.35);
+}
+
+#filters_dialog_content {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 20px;
+}
+
+#filters_dialog_content header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  border: 0;
+  color: var(--text-title-color);
+}
+
+#filters_dialog_content header button {
+  color: var(--buttons-transparent-text-color);
+  background: none;
+}
+
+#filters_dialog_content > button {
+  background: var(--buttons-solid-background-color);
+  font-size: 16px;
+  color: var(--buttons-solid-text-color);
+  font-weight: 600;
+  margin-top: 30px;
+  height: 40px;
+  border-radius: 5px;
 }
 
 @keyframes spin {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -880,7 +911,7 @@ dialog::backdrop {
 
   main {
     padding: 30px 45px 10px;
-    flex-direction: row;
+    flex-direction: column;
   }
 
   main form .content {
@@ -900,27 +931,21 @@ dialog::backdrop {
     margin-top: 0;
   }
 
-  .search_result header fieldset {
+  .search_inputs fieldset {
     max-width: 350px;
     margin-top: 0;
   }
 
-  .search_result header div {
+  .search_inputs div {
     width: 100%;
 
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 280px));
+    justify-content: start;
+    gap: 20px;
   }
 
-
-  .search_result > header div button {
-    width: auto;
-    padding: 20px;
-  }
-
-  .property_list {
+  .property_list, .property_filter {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 400px));
     gap: 15px;
@@ -938,7 +963,7 @@ dialog::backdrop {
   .property_popup {
     border-radius: 5px;
     width: 90vw;
-    max-width: 700px;
+    max-width: 800px;
     height: 95vh;
     max-height: 750px;
 
@@ -962,5 +987,24 @@ dialog::backdrop {
 
   .register_demand .actions {
     gap: 0;
+  }
+
+  #filters_dialog {
+    position: fixed;
+    top: 24px;
+    right: auto;
+    bottom: auto;
+    left: 24px;
+    width: min(420px, 92vw);
+    height: auto;
+    max-height: 90vh;
+    margin: 0;
+    overflow-y: auto;
+    border-radius: 12px;
+  }
+
+  #filters_dialog_content {
+    max-height: calc(100vh - 48px);
+    overflow-y: auto;
   }
 }

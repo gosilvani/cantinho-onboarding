@@ -192,7 +192,8 @@
           "required": [
             "title",
             "default",
-            "highlight"
+            "highlight",
+            "hero"
           ],
           "properties": {
             "title": {
@@ -206,6 +207,11 @@
               "maxLength": 9
             },
             "highlight": {
+              "type": "string",
+              "minLength": 4,
+              "maxLength": 9
+            },
+            "hero": {
               "type": "string",
               "minLength": 4,
               "maxLength": 9

@@ -18,6 +18,7 @@
   --text-title-color: {{textTitleColor}};
   --text-default-color: {{textDefaultColor}};
   --text-highlight-color: {{textHiglightColor}};
+  --text-hero-color: {{textHeroColor}};
 
   --forms-label-color: {{formsLabelColor}};
 
@@ -120,7 +121,7 @@ main nav {
 main nav h1 {
   font-size: clamp(24px, 5vw, 36px);
   font-weight: 500;
-  margin-bottom: 50px;
+  color: var(--text-hero-color);
 }
 
 main nav label {
