@@ -1,78 +1,117 @@
 const company = {
-  name: 'Validate Rent',
-  tenant: 'validate-rent',
-  dns: 'www.rent.cantinho.co',
-  siteMode: 'rent',
-  gtm: 'GTM-XXXXXXXX',
+  name: 'Vitor Tenório',
+  tenant: 'vitor-tenorio',
+  dns: 'www.vitortenorio.cantinho.co',
+  siteMode: 'sale',
+  gtm: 'GTM-WBLMTGCD',
+  creci: [
+    {
+      label: '',
+      number: ''
+    }
+  ],
   address: {
-    street: 'Demonstração',
-    number: 'X',
-    district: 'X',
-    city: 'X',
-    state: 'XX',
+    street: 'Rua Daniela Matos de Mendonça',
+    number: '16',
+    district: 'São José',
+    city: 'Juazeiro do Norte',
+    state: 'CE',
   },
   contacts: [
     {
       label: 'Atendimento',
-      number: '32984835145',
+      number: '88998039479',
       hasWhatsapp: true,
       context: 'both'
-    },
-    {
-      label: 'Atendimento - Vendas',
-      number: '32985084774',
-      hasWhatsapp: true,
-      context: 'sale'
-    },
-    {
-      label: 'Atendimento - Aluguel',
-      number: '32984128641',
-      hasWhatsapp: true,
-      context: 'rent'
-    },
-    {
-      label: 'Assistência',
-      number: '3237461615',
-      hasWhatsapp: false,
-      context: 'general'
     }
   ],
   citiesAndDistricts: [
     {
-      "name": "Espera Feliz - MG",
+      "name": "Barbalha - CE",
       "districts": [
-        "Área de Lazer",
+        "Alto da Alegria",
+        "Bulandeira",
         "Centro",
-        "Floresta",
-        "João Clara",
-        "João do Roque",
-        "Mineradora",
+        "Cidade Kariris",
+        "Cirolândia",
+        "Fátima",
+        "Jardim dos Ipês",
+        "Malvinas",
+        "Mata dos Dudas",
+        "Mata dos Limas",
+        "Novo Araçás",
+        "Populares",
+        "Rosário",
+        "Santo Antônio",
+        "Vila Santo Antônio",
+        "Zona Rural"
+      ]
+    },
+    {
+      "name": "Crato - CE",
+      "districts": [
+        "Aderson Tavares Bezerra",
+        "Alto da Penha",
+        "Centro",
+        "Gisélia Pinheiro",
+        "Grangeiro",
+        "Mirandão",
+        "Muriti",
+        "Nossa Senhora de Fátima",
         "Novo Horizonte",
-        "Patronato",
-        "Retas",
-        "Santa Cecília",
-        "Santa Inês",
+        "Novo Lameiro",
+        "Ossian Araripe",
+        "Parque Grangeiro",
+        "Pimenta",
+        "Pinto Madeira",
         "Santa Luzia",
-        "São Francisco",
-        "Vale do Sol 1",
-        "Vale do Sol 2",
-        "Waltair",
+        "São Bento",
+        "São José",
+        "São Miguel",
+        "Seminário",
+        "Sossego",
+        "Vila Alta",
+        "Zacarias Gonçalves",
         "Zona Rural"
       ]
     },
     {
-      "name": "Carangola",
+      "name": "Juazeiro do Norte - CE",
       "districts": [
-        "Coroado",
+        "Aeroporto",
+        "Antônio Vieira",
+        "Carité",
         "Centro",
-        "Zona Rural"
-      ]
-    },
-    {
-      "name": "Manhuaçu",
-      "districts": [
-        "Vila Nova",
-        "Centro",
+        "Cidade Universitária",
+        "Franciscanos",
+        "Frei Damião",
+        "Grangeiro",
+        "Horto",
+        "Jardim Gonzaga",
+        "João Cabral",
+        "José Geraldo da Cruz",
+        "Lagoa Seca",
+        "Limoeiro",
+        "Logradouro",
+        "Manoel Chaves",
+        "Novo Juazeiro",
+        "Pedrinhas",
+        "Pio XII",
+        "Pirajá",
+        "Planalto",
+        "Romeirão",
+        "Salesianos",
+        "Salgadinho",
+        "Sancta Maria",
+        "Santa Tereza",
+        "Santo Antônio",
+        "São José",
+        "São Miguel",
+        "Socorro",
+        "Tiradentes",
+        "Triângulo",
+        "Vila Fátima",
+        "Vila Real",
         "Zona Rural"
       ]
     }
@@ -80,9 +119,9 @@ const company = {
 };
 
 const user = {
-  name: 'Demonstração',
-  email: 'demonstracao@gmail.com',
-  password: '10203050',
+  name: 'Vitor Tenório',
+  email: 'vitor.tenorio.casadaarvore@gmail.com',
+  password: '10204570',
   type: 'companyAdmin',
 };
 
@@ -92,32 +131,32 @@ const theme = {
   contents: {
     home: {
       heroImageFileName: 'hero-image.svg',
-      heroText: 'Demonstração',
-      metaDescription: 'Encontre imóveis para comprar ou alugar. Casas, apartamentos, terrenos e oportunidades anunciadas por corretores e imobiliárias da sua cidade.'
+      heroText: 'O seu sonho de ter a casa própria está mais perto do que você imagina!',
+      metaDescription: 'Encontre seu próximo imóvel com Vitor Tenório. Confira imóveis à venda e conte com atendimento personalizado em cada etapa da compra.'
     },
     about: {
       heroImageFileName: 'hero-image.svg',
-      heroText: 'Demonstrativo.',
-      metaDescription: 'Conheça o Cantinho, um marketplace imobiliário que conecta você a imóveis, corretores e imobiliárias da sua cidade.'
+      heroText: 'Vitor Tenório é corretor de imóveis com atuação exclusiva na compra e venda. Seu trabalho começa por entender o que cada cliente procura, para apresentar opções alinhadas às suas necessidades e ao seu momento de vida. Com atendimento próximo e informações claras, acompanha cada etapa da negociação para ajudar você a tomar uma decisão com confiança.',
+      metaDescription: 'Conheça Vitor Tenório, corretor dedicado à compra e venda de imóveis, com atendimento próximo e foco nas necessidades de cada cliente.'
     },
     propertySale: {
-      metaDescription: 'Encontre {{propertyType}} à venda em {{city}}.'
+      metaDescription: 'Seu próximo imóvel pode estar aqui: {{propertyType}} à venda em {{city}}. Conheça os detalhes e agende sua visita com Vitor Tenório.'
     },
     propertyRent: {
-      metaDescription: 'Encontre {{propertyType}} para alugar em {{city}}.'
+      metaDescription: 'Seu próximo imóvel pode estar aqui: {{propertyType}} para alugar em {{city}}. Conheça os detalhes e agende sua visita com Vitor Tenório.'
     }
   },
   colors: {
-    line: '#D0A616',
+    line: '#CFA960',
     background: '#F4F4F4',
     buttons: {
       transparent: {
-        text: '#D0A616',
-        border: '#D0A616'
+        text: '#CFA960',
+        border: '#CFA960'
       },
       solid: {
-        background: '#D0A616',
-        text: '#2C345C'
+        background: '#CFA960',
+        text: '#010207'
       },
       remove: {
         background: '#B21313',
@@ -125,22 +164,22 @@ const theme = {
       }
     },
     text: {
-      title: '#2C345C',
-      default: '#2C345C',
-      highlight: '#D0A616',
-      hero: '#D0A616'
+      title: '#010207',
+      default: '#010207',
+      highlight: '#CFA960',
+      hero: '#CFA960'
     },
     forms: {
-      label: '#2C345C',
+      label: '#010207',
       input: {
         background: '#D5DADE',
-        text: '#2C345C'
+        text: '#010207'
       }
     },
     ads: {
       background: '#fff',
       border: '#ddd',
-      line: '#D0A616'
+      line: '#CFA960'
     }
   }
 }

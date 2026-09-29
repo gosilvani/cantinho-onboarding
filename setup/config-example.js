@@ -4,6 +4,12 @@ const company = {
   dns: '',
   siteMode: '',
   gtm: '',
+  creci: [
+    {
+      label: '',
+      number: ''
+    }
+  ],
   address: {
     street: '',
     number: '',
