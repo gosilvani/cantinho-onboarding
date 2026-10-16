@@ -9,9 +9,25 @@
 
 ### Passos de execução
 
-- Inserir os arquivos de icons e images na pasta lib/setup/files
-- Inserir os dados da empresa e do usuário no arquivo lib/setup/config.current.js
-- Rodar o script process
+- Inserir os arquivos de icons e images na pasta `setup/files`
+- Inserir os dados da empresa, usuário e tema no arquivo `setup/config-current.js`
+- Executar explicitamente o fluxo `complete`, informando a etapa:
+
+```bash
+npm start -- complete stepOne
+npm start -- complete stepTwo tenant
+npm start -- complete stepThree tenant
+npm start -- complete stepFour tenant
+```
+
+O `stepOne` utiliza o tenant definido na configuração. As demais etapas
+recebem o tenant como argumento. Os comandos anteriores sem `complete`
+devem ser atualizados para este formato.
+
+Os controllers do parceiro Completo ficam em
+`lib/process/controllers/complete/`. O índice de controllers expõe
+esse fluxo como `complete`, mantendo os serviços compartilhados em
+`lib/process/services/`.
 
 ### Cache de HTML, CSS e JS
 
