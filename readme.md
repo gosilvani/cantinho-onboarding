@@ -10,7 +10,7 @@
 ### Passos de execução
 
 - Inserir os arquivos de icons e images na pasta `setup/files`
-- Inserir os dados da empresa, usuário e tema no arquivo `setup/config-current.js`
+- Inserir os dados da empresa, usuário e tema no arquivo `setup/config-current-complete.js`
 - Executar explicitamente o fluxo `complete`, informando a etapa:
 
 ```bash
@@ -28,6 +28,41 @@ Os controllers do parceiro Completo ficam em
 `lib/process/controllers/complete/`. O índice de controllers expõe
 esse fluxo como `complete`, mantendo os serviços compartilhados em
 `lib/process/services/`.
+
+### Parceiro Gratuito
+
+Preencher `setup/config-current-free.js`, seguindo o exemplo em
+`setup/examples/config-example-free.js`, e executar:
+
+```bash
+npm start -- free
+```
+
+A configuração usa `const company`, `const user` e
+`module.exports = { company, user }`. São obrigatórios nome, tenant,
+contatos, CRECI e endereço da empresa, além dos dados do usuário.
+CRECI e endereço seguem as mesmas estruturas do Complete; o complemento
+do endereço é opcional. É necessário pelo menos um WhatsApp comercial
+com contexto `sale`, `rent` ou `both`.
+
+O fluxo grava company com `type: 'free'`, usuário vinculado ao tenant
+e um registro de conclusão em `process`. Não cria theme, site, arquivos
+no S3, certificado, CDN ou agendamentos. A company gratuita não recebe
+`dns`, `siteMode`, `gtm`, `directory` ou `citiesAndDistricts`.
+
+O exemplo do Complete fica em `setup/examples/config-example-complete.js`.
+O arquivo anterior `setup/config-current.js` foi renomeado para
+`setup/config-current-complete.js`, preservando sua configuração.
+
+### Validações e persistência
+
+Free e Complete têm funções próprias de validação e inserção, com
+verificação de disponibilidade de tenant e e-mail antes de cadastrar.
+O tipo do usuário continua sendo `companyAdmin` ou
+`companyUser`, independente do tipo da empresa.
+
+A inserção é sequencial: o Free grava company e user; o Complete grava
+company, user e theme.
 
 ### Cache de HTML, CSS e JS
 

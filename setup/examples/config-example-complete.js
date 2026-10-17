@@ -18,7 +18,7 @@ const company = {
     city: '',
     state: '',
   },
-  contact: [
+  contacts: [
     {
       label: '',
       number: '',
@@ -30,12 +30,6 @@ const company = {
     {
       name: '',
       districts: []
-    }
-  ],
-  creci: [
-    {
-      label: '',
-      number: ''
     }
   ]
 };
