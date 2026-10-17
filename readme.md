@@ -42,8 +42,8 @@ A configuração usa `const company`, `const user` e
 `module.exports = { company, user }`. São obrigatórios nome, tenant,
 contatos, CRECI e endereço da empresa, além dos dados do usuário.
 CRECI e endereço seguem as mesmas estruturas do Complete; o complemento
-do endereço é opcional. É necessário pelo menos um WhatsApp comercial
-com contexto `sale`, `rent` ou `both`.
+do endereço é opcional. Os contatos seguem o schema do Free, sem
+obrigatoriedade de WhatsApp.
 
 O fluxo grava company com `type: 'free'`, usuário vinculado ao tenant
 e um registro de conclusão em `process`. Não cria theme, site, arquivos
@@ -54,15 +54,70 @@ O exemplo do Complete fica em `setup/examples/config-example-complete.js`.
 O arquivo anterior `setup/config-current.js` foi renomeado para
 `setup/config-current-complete.js`, preservando sua configuração.
 
+### Parceiro Portal
+
+Preencher `setup/config-current-portal.js`, seguindo
+`setup/examples/config-example-portal.js`, com `const company`, `const user`
+e `module.exports = { company, user }`.
+
+A company exige nome, tenant, contatos, CRECI, endereço e `logoFileName`.
+O arquivo da logo deve estar diretamente em `setup/files/assets/`.
+São aceitas extensões `.svg`, `.jpg`, `.jpeg` e `.png`, em minúsculas.
+O nome não deve conter diretórios; a validação confere extensão, existência
+e se o caminho corresponde a um arquivo. Não há conversão da imagem.
+O tenant aceita letras, números e hífens entre os segmentos.
+
+Definir no ambiente ou no `.env` o domínio da CDN compartilhada:
+
+```dotenv
+DNS_MEDIA_CDN=midia.cantinho.co
+```
+
+O valor deve conter somente o domínio, sem protocolo, porta, barra final
+ou caminho. Não informar `dns` na configuração da company: o build monta
+esse campo com o domínio da variável e o tenant em minúsculas.
+
+Executar:
+
+```bash
+npm start -- portal
+```
+
+Exemplo do resultado para tenant `parceiro-a` e logo `logo.svg`:
+
+```text
+company.type: portal
+company.dns: midia.cantinho.co/parceiro-a
+company.logoFileName: logo.svg
+Chave no bucket: parceiro-a/assets/logo.svg
+URL: https://midia.cantinho.co/parceiro-a/assets/logo.svg
+```
+
+O upload utiliza `AWS_BUCKET_NAME`, `AWS_REGION`, `AWS_ACCESS_KEY_ID` e
+`AWS_SECRET_ACCESS_KEY`, como o fluxo Complete. Envia somente a logo,
+preservando o arquivo local. A CDN compartilhada precisa estar configurada
+previamente para servir os caminhos do bucket.
+
+O controller valida dados e logo, verifica execução anterior e disponibilidade
+de tenant/e-mail, constrói as entidades, envia a logo, insere company e user
+e registra a conclusão em `process` com etapa `portal`.
+Se o upload falhar, não insere as entidades. Se uma etapa posterior falhar,
+o arquivo já enviado pode permanecer no bucket; não há rollback automático.
+
+Não cria theme, páginas, certificado, CDN própria ou agendamentos.
+Não exige `siteMode`, `gtm`, `directory` ou `citiesAndDistricts`.
+O consumo de `company.logoFileName` no login e importer é uma evolução
+separada desses projetos.
+
 ### Validações e persistência
 
-Free e Complete têm funções próprias de validação e inserção, com
+Free, Portal e Complete têm funções próprias de validação e inserção, com
 verificação de disponibilidade de tenant e e-mail antes de cadastrar.
 O tipo do usuário continua sendo `companyAdmin` ou
 `companyUser`, independente do tipo da empresa.
 
-A inserção é sequencial: o Free grava company e user; o Complete grava
-company, user e theme.
+A inserção é sequencial: Free e Portal gravam company e user; o Complete
+grava company, user e theme.
 
 ### Cache de HTML, CSS e JS
 
