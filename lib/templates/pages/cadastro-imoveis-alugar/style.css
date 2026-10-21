@@ -152,6 +152,10 @@ main section a article {
   max-width: 100%
 }
 
+.hidden {
+  display: none;
+}
+
 .property-card {
   border-bottom: 1px solid var(--line-color);
   height: 70px;

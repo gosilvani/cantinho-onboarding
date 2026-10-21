@@ -58,6 +58,10 @@ a {
   text-decoration: none;
 }
 
+.hidden {
+  display: none;
+}
+
 body>header {
   display: flex;
   justify-content: space-between;
