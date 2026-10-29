@@ -335,6 +335,35 @@ main fieldset select {
   overflow: hidden;
 }
 
+.carrosel.property_no_image {
+  display: flex;
+  align-items: center;
+  padding: clamp(16px, 4vw, 28px);
+  background-color: #eef0f2;
+  color: #263238;
+  font-family: inherit;
+}
+
+.property_no_image figcaption {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.property_no_image_city,
+.property_no_image_details {
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.property_no_image_district {
+  font-size: clamp(22px, 3vw, 32px);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
 .carrosel>img {
   width: 100%;
   height: 100%;
