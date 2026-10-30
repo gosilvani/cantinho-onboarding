@@ -1,25 +1,25 @@
 const company = {
-  name: '',
-  tenant: '',
+  name: 'Corretor Portal',
+  tenant: 'portal-tenant-t',
   logoFileName: 'logo.svg',
   creci: [
     {
-      label: '',
-      number: ''
+      label: 'Corretor Gratuito',
+      number: '15.000-J/MG'
     }
   ],
   address: {
-    street: '',
-    number: '',
-    complement: '',
-    district: '',
-    city: '',
-    state: ''
+    street: 'Rua teste',
+    number: '20',
+    complement: 'Teste',
+    district: 'Centro',
+    city: 'Espera Feliz',
+    state: 'MG'
   },
   contacts: [
     {
       label: 'Comercial',
-      number: '',
+      number: '32984835145',
       hasWhatsapp: true,
       context: 'both'
     }
@@ -27,9 +27,9 @@ const company = {
 };
 
 const user = {
-  name: '',
-  email: '',
-  password: '',
+  name: 'Usuário portal',
+  email: 'portal@gmail.com',
+  password: '10203050',
   type: 'companyAdmin'
 };
 

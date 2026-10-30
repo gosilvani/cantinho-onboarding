@@ -1,24 +1,24 @@
 const company = {
-  name: '',
-  tenant: '',
+  name: 'Corretor Gratuito',
+  tenant: 'free-tenant-t',
   creci: [
     {
-      label: '',
-      number: ''
+      label: 'Corretor Gratuito',
+      number: '12.000-J/MG'
     }
   ],
   address: {
-    street: '',
-    number: '',
-    complement: '',
-    district: '',
-    city: '',
-    state: ''
+    street: 'Rua teste',
+    number: '20',
+    complement: 'Teste',
+    district: 'Centro',
+    city: 'Espera Feliz',
+    state: 'MG'
   },
   contacts: [
     {
       label: 'Comercial',
-      number: '',
+      number: '32984835145',
       hasWhatsapp: true,
       context: 'both'
     }
@@ -26,9 +26,9 @@ const company = {
 };
 
 const user = {
-  name: '',
-  email: '',
-  password: '',
+  name: 'Usuário Gratuito',
+  email: 'free@gmail.com',
+  password: '10203050',
   type: 'companyAdmin'
 };
 
